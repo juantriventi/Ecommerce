@@ -1,0 +1,89 @@
+/* detalle de producto */
+
+.fondo-juan{
+    background-color: #ebebeb;
+}
+img{
+    width: 80%;
+    
+}
+.producto-juan{
+    left: 20vw;
+    top: 20vh;
+    position: relative;
+   
+    height: 40vh;
+    width: 30vw;
+    text-align: center;
+    background-color: #fff;
+    
+}
+.descripcion-producto-juan{
+    position: relative;
+    left: 50vw;
+    top: -20vh;
+    background-color: #fff;
+    height: 40vh;
+    width: 30vw;
+    text-align: center;
+    
+   
+}
+
+.precio-juan{
+font-size: 18px;
+font-weight: bold;
+}
+.cuotas-juan{
+    padding-top: 5px;
+    color: lightslategrey;
+}
+.nombre-juan{
+    padding-top: 5px;
+    background-color: #fff;
+}
+.precio-juan{
+    padding-top: 5px;
+    background-color: #fff;
+}
+.mas-vendido-juan{
+    padding-top: 5px;
+}
+.devolucion-juan{
+    color: green;
+}
+.envio-juan{
+    padding-top: 10px;
+    font: bold;
+    font-size: 18px;
+    color: green;
+}
+.comprar-juan{
+    font-size: 18px;
+    border-radius:5px;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+}
+.comprar-juan:hover, .comprar-juan:focus {
+    background-color: #0069d9;
+  }
+  
+  @media (max-width:768px) {
+    .nombre-juan{
+        display: none;
+    }
+    
+    .descripcion-juan{
+        display: none;
+    }
+    .texto-bajo-foto-juan{
+        display: none;
+    }
+    .devolucion-juan{
+        font-size: 14px;
+    }
+    .envio-juan{
+        font-size: 14px;
+    }
+}

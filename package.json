@@ -1,0 +1,24 @@
+{
+  "name": "grupo_3_ropadeportiva",
+  "version": "1.0.0",
+  "description": "Temática del sitio: Indumentaria, accesorios y calzado deportivo.",
+  "main": "app.js",
+  "scripts": {
+    "test": "t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valtwy/grupo_3_RopaDeportiva.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valtwy/grupo_3_RopaDeportiva/issues"
+  },
+  "homepage": "https://github.com/Valtwy/grupo_3_RopaDeportiva#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}

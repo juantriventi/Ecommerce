@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %> 
+<body>
+    <%- include("../partials/header") %> 
+<section>
+<div class="cart-titulo">
+ <p>Mi Carrito</p>
+</div>
+<div class="cart-seguir-comprando">
+ <a href="/">Seguir comprando</a>
+</div>
+<div class="cart-cont-main">
+<div class="cart-cont-productos">
+    <div class="cart-producto1">
+        <img src="/images/remera.jpg" alt="remera">
+        <div class="cart-detalle-producto1">
+            <p class="cart-nombre-producto">Remera Nike Sportswear</p>
+            <p class="cart-talle-producto">Talle M</p>
+            <div class="cart-editar-producto1">
+                <a class="cart-editar-prod-texto" href="">Editar producto</a>
+            </div>
+            <i class="fas fa-trash-alt"></i> 
+            <div class="cart-cont-detalle-der">
+                <div class="cart-cant-producto1">
+                    <p class="cart-espacio-texto">Cantidad</p>
+                    <select class="cart-cant-field" name="cantidad"> 
+                        <option value="value1">1</option>
+                    </select>
+                </div>
+                <div class="cart-precio-producto1">
+                    <p class="cart-espacio-texto">Total</p>
+                    <p class="cart-precio-texto">$5.299</p>
+                </div>                
+            </div>           
+        </div>
+                
+    </div>
+    <div class="cart-producto2">
+        <img src="/images/calza.jpg" alt="calza">
+        <div class="cart-detalle-producto2">
+            <p class="cart-nombre-producto">Calza Nike Icon Clash</p>
+            <p class="cart-talle-producto">Talle M</p>
+            <div class="cart-editar-producto2">
+                <a class="cart-editar-prod-texto" href="">Editar producto</a>
+            </div>
+            <i class="fas fa-trash-alt"></i> 
+            <div class="cart-cont-detalle-der">
+                <div class="cart-cant-producto2">
+                    <p class="cart-espacio-texto">Cantidad</p>
+                    <select class="cart-cant-field" name="cantidad"> 
+                        <option value="value1">1</option>
+                    </select>
+                </div>
+                <div class="cart-precio-producto2">
+                    <p class="cart-espacio-texto">Total</p>
+                    <p class="cart-precio-texto">$10.999</p>
+                </div>            
+            </div>            
+        </div>               
+    </div>
+</div>
+<div class="cart-cont-derecha">
+    <div class="cart-codigo-promo">
+        <p>¿Tenés un código de promoción?</p>
+        <div class="cart-field-codigo">
+            <input type="text" placeholder="Ingresá tu código">
+            <button class="cart-boton-chico">Validar</button> 
+        </div>
+    </div>
+    <div class="cart-envio">
+        <p>Calculá el costo de envío</p>
+        <div class="cart-field-envio">
+            <input type="text" placeholder="Código Postal">
+            <button class="cart-boton-chico">Calcular</button> 
+        </div>
+        <p class="cart-display-envio">Costo de envío............. $335</p>
+    </div>
+    <div class="cart-detalle-de-compra">
+        <p>Subtotal ........................................................ $16.298</p>
+        <p>Envío ............................................................... $335</p>
+        <p>Total................................................................ $16.633</p>
+        <button class="cart-boton-compra">COMPRAR</button>
+    </div>
+</div>
+</div>  
+</section>
+<section>    
+    <div class="cart-cont-pagos">
+        <p class="cart-titulo2">Medios de pago</p>
+        <div class="cart-credito">
+            <p>Tarjetas de crédito</p>
+            <img src="/images/credito.jpg" alt="tarjetas de credito">
+        </div>
+        <div class="cart-debito">
+            <p>Tarjetas de débito</p>
+            <img src="/images/debito.jpg" alt="tarjetas de credito">
+        </div>
+        <div class="cart-mp">
+            <p>Mercado Pago</p>
+            <img src="/images/MP.jpg" alt="tarjetas de credito">
+        </div>
+    </div>     
+</section>
+<section>
+    <div class="cart-cont-suscribirse">
+        <p>Recibí novedades en tu mail</p>
+        <div class="cart-nl-field">
+            <input type="email" placeholder="Ingresá tu mail">
+            <button>SUSCRIBIRSE</button>
+        </div>
+    </div>
+</section>
+
+<%- include("../partials/footer") %> 
+
+    </body>
+</html>
