@@ -4,7 +4,7 @@
   "description": "Temática del sitio: Indumentaria, accesorios y calzado deportivo.",
   "main": "app.js",
   "scripts": {
-    "test": "t"
+    "start": "nodemon ./src/bin/www"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/Valtwy/grupo_3_RopaDeportiva#readme",
   "dependencies": {
-    "cookie-parse": "^0.4.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "debug": "^4.3.2",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
