@@ -17,8 +17,17 @@
   },
   "homepage": "https://github.com/Valtwy/grupo_3_RopaDeportiva#readme",
   "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "debug": "^4.3.2",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "nodemon": "^2.0.12"
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "http-errors": "^1.8.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.12",
+    "uuid": "^8.3.2"
   }
 }
