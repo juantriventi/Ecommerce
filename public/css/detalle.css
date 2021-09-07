@@ -1,5 +1,7 @@
 /* detalle de producto */
 
+/* mobile */
+
 .fondo-juan{
     background-color: #ebebeb;
 }
@@ -25,8 +27,7 @@ img{
     background-color: #fff;
     height: 40vh;
     width: 30vw;
-    text-align: center;
-    
+    text-align: center;   
    
 }
 
@@ -59,17 +60,25 @@ font-weight: bold;
     color: green;
 }
 .comprar-juan{
-    font-size: 18px;
-    border-radius:5px;
-    background-color: #007bff;
-    color: #fff;
     transition: background-color .15s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+    width: 75%;
+    background-color: black;
+    border-style: none;
+    color: white;
+    height: 35px;
+    border-radius: 2px;
 }
 .comprar-juan:hover, .comprar-juan:focus {
     background-color: #0069d9;
   }
   
-  @media (max-width:768px) {
+
+
+  /* laptop*/ 
+
+  @media (max-width:769px) {
     .nombre-juan{
         display: none;
     }
@@ -86,4 +95,5 @@ font-weight: bold;
     .envio-juan{
         font-size: 14px;
     }
+
 }

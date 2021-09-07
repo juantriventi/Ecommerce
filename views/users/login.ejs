@@ -4,10 +4,7 @@
 <body>
     <%- include("../partials/header") %>
     <div class="registro">
-        <div class="logo-registro">
-            <img class="logo" src="/images/alien-white.png" alt="logo">                
-        </div>
-        <form action="index.html" method="POST">
+        <form class="form-container" action="index.html" method="POST">
             <p class="titulo-login">INICIA SESION:</p>
             <label for="usuario">Nombre de usuario:</label> <br>
             <input type="text" name="usuario" id="usuario" required> <br>
@@ -17,7 +14,7 @@
             <button class="entrar" type="submit">ENTRAR</button>
             </div>
             <p class="texto-notenes">No tenes cuenta? <a href="users/register">Crea una!</a> </p>
-            </form>
+        </form>
     </div>
     <%- include("../partials/footer") %>     
     </body>
