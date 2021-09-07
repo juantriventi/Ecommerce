@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <ul>
+        <% listaProductos.forEach(function(producto) { %>
+           <li style="display: flex">
+                <div>
+                    <p>Nombre: <%= producto.nombre %> --- <a href="/products/detalle/<%=producto.id%>">Ir</a></p>
+                    <img width="60" height="60"  src="/images/products/<%=producto.img %>">
+                </div>
+            </li>
+        <% }); %> 
+    </ul>
+    <%- include("../partials/footer") %>
+</body>
