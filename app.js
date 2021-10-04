@@ -2,6 +2,8 @@ const express=require("express");
 const mainRoutes = require("./routes/mainRoutes.js");
 const productsRoutes = require("./routes/productsRoutes.js");
 const usersRoutes = require("./routes/usersRoutes.js");
+const logMiddleware = require("./middlewares/logMiddleware");
+
 const createErrors = require('http-errors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
@@ -15,6 +17,9 @@ const path=require('path');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(logMiddleware);
+app.use(express.urlencoded({ extended:false }));
 
 app.set("view engine", "ejs");
 app.use(methodOverride('_method'));

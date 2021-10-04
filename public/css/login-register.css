@@ -11,7 +11,12 @@
     border: 1px solid #d4d1d1;
     padding: 50px;
 }
-
+.formulario-input {
+    border: 1px solid black;
+}
+.texto-error {
+    color: red;
+}
 
 .titulo-login{
     font-size: 20px;
