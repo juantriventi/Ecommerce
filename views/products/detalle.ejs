@@ -15,14 +15,13 @@
             <div class="precio-juan">$<%= producto.precio %> </div>
             <div class="cuotas-juan">6 cuotas sin interes de $2.075</div>
             <div class="cuotas-color-completar"><p><%= producto.color %> </p></div>
-            <div class="mas-vendido-juan color-<%= typeof producto !== 'undefined'? producto.color: ''%>"><h3>Más vendido</h3></div>
+            <div class="mas-vendido-juan color-<%= typeof producto !== 'undefined'? producto.color: ''%>"></div>
             <div class="descripcion-juan"><p><%= producto.descripcion %> </p></div>
-            <div class="devolucion-juan"><i class="fas fa-undo-alt">Devolución sin costo</i></div>
-            <div class="envio-juan"><i class="fas fa-truck">Envio gratis en el país</i> </div>
+            
             <br>
 
             <div class="comprar-juan">
-                <a href="/products">Comprar</a>
+                <a class="comprar" href="/products" style-li>Comprar</a>
             </div>
 
             <div class="comprar-juan" >
@@ -31,7 +30,7 @@
 
             <div class="comprar-juan" >
                 <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Eliminar</button>
+                    <button id="eliminar" type="submit" > Eliminar</button>
                 </form>
             </div>
            
