@@ -8,6 +8,16 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.detalle{
+    background-color: #d4d1d1;
+    text-align: center;
+    margin: 2px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 25px;
+    
+}
+
 /* HEADER */
 
 .cont-burger-menu {

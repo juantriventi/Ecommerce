@@ -4,10 +4,10 @@
 <body>
     <%- include("../partials/header") %> 
     <main>
-        <div class="fondo-juan">
+        
         <div class="producto-juan">
             <img src="/images/products/<%= producto.img %>" alt="imagen de una zapatilla">
-            <div class="texto-bajo-foto-juan"><p>foto del producto</p></div>
+            <div class="texto-bajo-foto-juan"><p>foto <%= producto.nombre %> </p></div>
         </div>
         <div class="descripcion-producto-juan">
             
@@ -20,19 +20,18 @@
             <div class="devolucion-juan"><i class="fas fa-undo-alt">Devolución sin costo</i></div>
             <div class="envio-juan"><i class="fas fa-truck">Envio gratis en el país</i> </div>
             <br>
-            <div class="comprar-juan">COMPRAR</div>
-            <div 
-                class="comprar-juan" 
-                style=" margin: 4px;background-color:coral; color:antiquewhite">
+
+            <div class="comprar-juan">
+                <a href="/products">Comprar</a>
+            </div>
+
+            <div class="comprar-juan" >
                 <a href="/products/create/<%=producto.id%>">Editar</a>     
             </div>
 
-            <div 
-                class="comprar-juan" 
-                style=" margin: 4px;background-color: crimson; color:antiquewhite">
-                
+            <div class="comprar-juan" >
                 <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="submit">ELIMINAR</button>
+                    <button type="submit">Eliminar</button>
                 </form>
             </div>
            
