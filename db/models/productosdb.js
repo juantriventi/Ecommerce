@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING
         },
         precio:{
-            type: dataTypes.NUMBER
+            type: dataTypes.INTEGER
         }
      
     }
