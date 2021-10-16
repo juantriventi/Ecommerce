@@ -25,5 +25,43 @@ Trabajo en equipo.
 4. Hacer menos
 Empezar tarde a trabajar sobre las entregas. 
 
+Retro del Sprint 4
+1. Comenzar a hacer
+Trabajar con branches
+2. Hacer más
+Alinearse mas en equipo.
+
+3. Continuar haciendo.
+Buena comunicacion.
+Trabajo en equipo. 
+4. Hacer menos
+Empezar tarde a trabajar sobre las entregas. 
+
+Retro del Sprint 5
+1. Comenzar a hacer
+Empezar antes con los sprints.
+Trabajar con mas branches
+2. Hacer más
+Tener reuniones más seguido.
+3. Continuar haciendo.
+Buena comunicacion.
+Trabajo en equipo.
+Buena division de tareas.
+4. Hacer menos
+Empezar tarde a trabajar sobre las entregas. 
+
+Retro del Sprint 6
+1. Comenzar a hacer
+Revisar lo que se hizo antes de empezar con lo que nos tocó
+Empezar antes con los sprints.
+2. Hacer más
+Reuniones grupales.
+3. Continuar haciendo.
+Buena comunicacion.
+Trabajo en equipo.
+Buena division de tareas.
+4. Hacer menos
+Organizar mas facil los Sprints.
+
 
 LINK AL TABLERO: https://trello.com/b/7i3hIoQb/proyecto
