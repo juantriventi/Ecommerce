@@ -569,35 +569,35 @@ img{
 
 
 
-.precio-juan{
+.precio-detalle{
 font-size: 18px;
 font-weight: bold;
 }
-.cuotas-juan{
+.cuotas-detalle{
     padding-top: 5px;
     color: lightslategrey;
 }
-.nombre-juan{
+.nombre-detalle{
     padding-top: 5px;
     background-color: #fff;
 }
-.precio-juan{
+.precio-detalle{
     padding-top: 5px;
     background-color: #fff;
 }
-.mas-vendido-juan{
+.mas-vendido-detalle{
     padding-top: 5px;
 }
-.devolucion-juan{
+.devolucion-detalle{
     color: green;
 }
-.envio-juan{
+.envio-detalle{
     padding-top: 10px;
     font: bold;
     font-size: 18px;
     color: green;
 }
-.comprar-juan{
+.comprar-detalle{
     font-size: 18px;
     border-radius:5px;
 
@@ -605,20 +605,20 @@ font-weight: bold;
 
   
   @media (max-width:768px) {
-    .nombre-juan{
+    .nombre-detalle{
         display: none;
     }
     
-    .descripcion-juan{
+    .descripcion-detalle{
         display: none;
     }
-    .texto-bajo-foto-juan{
+    .texto-bajo-foto-detalle{
         display: none;
     }
-    .devolucion-juan{
+    .devolucion-detalle{
         font-size: 14px;
     }
-    .envio-juan{
+    .envio-detalle{
         font-size: 14px;
     }
 }
