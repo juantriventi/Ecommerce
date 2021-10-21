@@ -9,7 +9,7 @@ img{
     width: 50%;
     
 }
-.producto-juan{
+.producto-detalle{
     left: 20vw;
     top: 20vh;
     position: relative;
@@ -20,7 +20,7 @@ img{
     background-color: #fff;
     
 }
-.descripcion-producto-juan{
+.descripcion-producto{
     position: relative;
     left: 50vw;
     top: -20vh;
@@ -38,35 +38,35 @@ a{
 }
 
 
-.precio-juan{
+.precio-detalle{
 font-size: 18px;
 font-weight: bold;
 }
-.cuotas-juan{
+.cuotas-detalle{
     padding-top: 5px;
     color: lightslategrey;
 }
-.nombre-juan{
+.nombre-detalle{
     padding-top: 5px;
     background-color: #fff;
 }
-.precio-juan{
+.precio-detalle{
     padding-top: 5px;
     background-color: #fff;
 }
-.mas-vendido-juan{
+.mas-vendido-detalle{
     padding-top: 5px;
 }
-.devolucion-juan{
+.devolucion-detalle{
     color: green;
 }
-.envio-juan{
+.envio-detalle{
     padding-top: 10px;
     font: bold;
     font-size: 18px;
     color: green;
 }
-.comprar-juan{
+.comprar-detalle{
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
@@ -76,7 +76,7 @@ font-weight: bold;
     height: 35px;
     border-radius: 0px;
 }
-.comprar-juan:hover, .comprar-juan:focus {
+.comprar-detalle:hover, .comprar-detalle:focus {
     font-size: 20px;
     
   }
@@ -94,20 +94,20 @@ font-weight: bold;
   /* laptop*/ 
 
   @media (max-width:769px) {
-    .nombre-juan{
+    .nombre-detalle{
         display: none;
     }
     
-    .descripcion-juan{
+    .descripcion-detalle{
         display: none;
     }
-    .texto-bajo-foto-juan{
+    .texto-bajo-foto-detalle{
         display: none;
     }
-    .devolucion-juan{
+    .devolucion-detalle{
         font-size: 14px;
     }
-    .envio-juan{
+    .envio-detalle{
         font-size: 14px;
     }
 
