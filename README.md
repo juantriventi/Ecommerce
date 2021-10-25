@@ -1,5 +1,14 @@
 # grupo_3_RopaDeportiva
 
+## PASOS PARA ARRANCAR LA DB
+
+1- prender el mysql.
+2- crear archivo .env y poner los datos del .env.example con tus datos de DB.
+3- npm i env-cmd.
+4- npm install.
+5- LISTO.
+
+
 Temática del sitio: Indumentaria, accesorios y calzado deportivo.
 
 Público objetivo: Hombres y mujeres de entre 18 y 65 años residentes en Argentina.
