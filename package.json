@@ -4,7 +4,9 @@
   "description": "Temática del sitio: Indumentaria, accesorios y calzado deportivo.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./src/bin/www"
+    "start": "nodemon ./src/bin/www",
+    "preinstall": "echo Instalando Librerias && npm i -g cross-env",
+    "postinstall": "echo Creando Base de Datos... && env-cmd cross-env-shell \"sequelize db:create\" && cd ./src/database && env-cmd -f ../../.env cross-env-shell \"sequelize db:migrate\" && echo Base de Datos"
   },
   "repository": {
     "type": "git",
