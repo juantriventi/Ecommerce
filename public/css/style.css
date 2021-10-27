@@ -8,15 +8,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.detalle{
-    background-color: #d4d1d1;
-    text-align: center;
-    margin: 2px;
-    border: black solid 1px;
-    border-radius: 5px;
-    font-size: 25px;
-    
-}
+
 
 /* HEADER */
 
@@ -405,6 +397,23 @@ padding-bottom: 10px;
 .cart-cont-suscribirse {
     display: none;
 }
+/* list */
+
+.titulo-list{
+    text-align: center;
+}
+
+.detalle{
+    background-color: #fff;
+    text-align: center;
+    margin: 2px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: 25px;
+    display: inline-table;
+    
+}
+
 
 /* tablet */
 @media (min-width: 481px) {
