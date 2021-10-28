@@ -403,10 +403,11 @@ padding-bottom: 10px;
     text-align: center;
 }
 
-.detalle{
+.lista-productos{
     background-color: #fff;
     text-align: center;
-    margin: 2px;
+    margin: 6px;
+    
     border: black solid 1px;
     border-radius: 5px;
     font-size: 25px;
