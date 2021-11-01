@@ -1,16 +1,19 @@
 
 const fs = require('fs');
 const path = require('path');
-const { Sequelize } = require('sequelize/types');
+const Product = require("./../src/database/models/product");
 
 const productsFilePath = path.join(__dirname, '../src/database/db_productos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const producto = Producto.
+
 
 
 const Producto = {
-    getAll: () => {
+    getAll:  () => {
+         Product.findAll().then(data => {
+             console.log(data)
+         })
         return productos
     },
 
