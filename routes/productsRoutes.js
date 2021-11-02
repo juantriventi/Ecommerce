@@ -36,6 +36,8 @@ const productosController = require("../controllers/productosController");
 
 router.get("/", productosController.index);
 
+router.post("/buscar", productosController.search);
+
 router.get("/carrito", productosController.carrito);
 
 router.get("/detalle/:id", productosController.detalle);
