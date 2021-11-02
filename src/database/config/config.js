@@ -1,6 +1,5 @@
-const {INTEGER} = require("sequelize");
-
 require('dotenv').config()
+
 
 module.exports =
 
@@ -11,8 +10,11 @@ module.exports =
     "password": process.env.DB_PASSWORD,
     "database": process.env.DB_DATABASE,
     "host": process.env.DB_HOST,
-    "port": parseInt(process.env.DB_PORT),
-    "dialect":"mysql",
+    "port": process.env.DB_PORT,
+    "dialect":process.env.DB_DIALECT,
+    
+    //configuraciones
+    "logging": process.env.DB_LOGGER=== true? console.log: false,
 
     // seederStorage: "sequelize",
     // seederStorageTableName: "seeds",
