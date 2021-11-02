@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const path = require('path');
 const {Product, Brand} = require("./../src/database/models/index");

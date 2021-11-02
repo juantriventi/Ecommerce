@@ -5,7 +5,7 @@ const path = require("path");
 
 const { body } = require("express-validator");
 
-/*** devielve los errores de los formularios ***/
+/*** devuelve los errores de los formularios ***/
 
 const validateProduct = [
   body("nombre").notEmpty().withMessage("Debe Completar Este campo"),
