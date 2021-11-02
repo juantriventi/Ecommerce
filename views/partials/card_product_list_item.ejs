@@ -1,0 +1,6 @@
+<div class="lista-productos">           
+    <img width="60" height="60" alt="<%= producto.name %>" src=<%= "images/products/" + encodeURI(producto.image) %> >
+    <p><%= producto.name %> - $<%= producto.price %> 
+    <p>Marca <span><%= producto.Brand? producto.Brand.name: "" %></span></p>
+    <a style="color: blue;" href="/products/detalle/<%=producto.id%>">Ir a detalle</a></p>
+</div>
