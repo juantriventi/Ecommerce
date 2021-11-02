@@ -6,18 +6,30 @@ const categorias = require('../models/categorias');
 const { v4: uuidv4 } = require("uuid");
 
 const controlador = {
-  index: (req, res) => {
-    const listaProductos = Producto.getAll();
+  index: async (req, res) => {
+    const listaProductos = await Producto.getAll();
     res.render("products/list", {
       listaProductos: listaProductos,
     });
   },
 
-  detalle: (req, res) => {
+  search: async(req, res) => {
+    const {query} = req.body;
+    console.log(query);
+    const product = await Producto.search(query);
+
+    if(product === null){
+      res.send('producto no ecnotrado');
+    }else {
+      res.redirect(`/products/detalle/${product.id}`);
+    }    
+  },
+
+  detalle: async(req, res) => {
     const id = req.params.id
-    const producto = Producto.getById(id);
+    const producto = await Producto.getById(id);
     //res.send(producto);
-    res.render('products/detalle', {producto: producto});
+    res.render(`products/detalle`, {producto});
   },
   carrito: (req, res) => {
     res.render("products/carrito");
@@ -28,33 +40,31 @@ const controlador = {
       categorias: categorias
     });
   },
-  store: (req, res) => {
+  store: async(req, res) => {
     let errors = validationResult(req);
     console.log(errors);
+    
     if (errors.isEmpty()) {
-      console.log(req.body);
 
       // al mapear creo un nuevo array sin modificar el existente
-      let nuevaListaProductos = Producto.getAll().map((prod) => prod);
-      const { nombre,precio, descripcion, categoria, color } = req.body;
+      const { nombre,precio, descripcion} = req.body;
       file = req.file;
       if(!file){
         // manejo algun error
       }
-      let productoId = uuidv4(); // genero un id unico y aleatorio
+     
 
       const nuevoProducto = {
-        id: productoId,
-        nombre: nombre,
-        precio: precio,
-        descripcion: descripcion,
-        img: file.filename,
-        categoria: categoria,
-        color: color,
+        name: nombre,
+        price: precio,
+        description: descripcion,
+        image: file.filename,
+        stock: 1000
+        //categoria: categoria,
+       // color: color,
       };
 
-      nuevaListaProductos.push(nuevoProducto);
-      Producto.modifiedAll(nuevaListaProductos);
+      Producto.store(nuevoProducto);  
     } else {
       render("product-form", {
         errors: errors.array(),
