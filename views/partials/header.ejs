@@ -23,10 +23,10 @@
                 </div>
                 <div class="header-right-cont">
                     <div class="header-search">
-                        <form method="GET" action="/">
+                        <form method="POST" action="/products/buscar">
                             <div class="button">
-                            <input type='text' placeholder="Buscar productos"> 
-                            <button> <i class="fas fa-search"></i></button>
+                            <input type='text' placeholder="Buscar productos" name="query"> 
+                            <button type="submit"> <i class="fas fa-search"></i></button>
                             </div> 
                          </form>                       
                     </div>
