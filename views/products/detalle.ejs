@@ -4,21 +4,18 @@
 <body>
     <%- include("../partials/header") %> 
     <main>
-
-        
-        
         <div class="producto-detalle">
-            <img src="/images/products/<%= producto.img %>" alt="imagen de una zapatilla">
-            <div class="texto-bajo-foto-juan"><p>foto <%= producto.nombre %> </p></div>
+            <img src="<%= encodeURI(producto.image) %>" alt="imagen de una zapatilla">
+            <div class="texto-bajo-foto-juan"><p>foto <%= producto.name %> </p></div>
         </div>
         <div class="descripcion-producto">
             
-            <div class="nombre-detalle"><p><%= producto.nombre %></p></div>
-            <div class="precio-detalle">$<%= producto.precio %> </div>
+            <div class="nombre-detalle"><p><%= producto.name %></p></div>
+            <div class="precio-detalle">$<%= producto.price %> </div>
             <div class="cuotas-detalle">6 cuotas sin interes de $2.075</div>
-            <div class="cuotas-color-completar"><p><%= producto.color %> </p></div>
-            <div class="mas-vendido-detalle color-<%= typeof producto !== 'undefined'? producto.color: ''%>"></div>
-            <div class="descripcion-detalle"><p><%= producto.descripcion %> </p></div>
+            <div class="cuotas-color-completar"><p>azul </p></div>
+            <div class="mas-vendido-detalle color-"></div>
+            <div class="descripcion-detalle"><p><%= producto.description %> </p></div>
             
             <br>
 
@@ -38,6 +35,9 @@
            
         </div>
     </div>
+        
+        
+        
     </main>
     <%- include("../partials/footer") %> 
 </body>
