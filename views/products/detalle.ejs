@@ -5,8 +5,8 @@
     <%- include("../partials/header") %> 
     <main>
         <div class="producto-detalle">
-            <img src="<%= encodeURI(producto.image) %>">
-            <div class="texto-bajo-foto-juan"><p>foto <%= producto.name %> </p></div>
+            <img src= <%= "/images/products/" + encodeURI(producto.image)%> >
+            <div class="texto-bajo-foto-detalle"><p>foto <%= producto.name %> </p></div>
         </div>
         <div class="descripcion-producto">
             
