@@ -1,6 +1,22 @@
+
+const path = require("path");
+let db = require("../src/database/models")
+const sequelize = db.sequelize
+const {Op} = require("sequelize")
+const bcryptjs = require("bcryptjs")
 const { validationResult } = require('express-validator');
+const { userInfo } = require("os");
+const User = db.User
+
 
 const controlador = {
+
+    list: (req,res) => {
+        User.findAll()
+        .then(users=>{
+            res.render("users/users", {users})
+        })
+    },
     login: (req,res) => {
         return res.render("users/login");
     },
