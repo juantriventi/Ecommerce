@@ -37,6 +37,9 @@ const Producto = {
     modifiedAll: (productos)=>{
         fs.writeFileSync(productsFilePath, JSON.stringify(productos))
     },
+    remove: async (producto) => {
+      await Product.destroy({where:{id:producto.id}})
+    }
 }
 
 module.exports = Producto;

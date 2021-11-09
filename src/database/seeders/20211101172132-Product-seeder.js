@@ -6,7 +6,7 @@ module.exports = {
      await queryInterface.bulkInsert('Products', [
        {
         name: 'max Air',
-        description: 'Sapatillas para volar',
+        description: 'zapatillas para volar',
         state: 'disponible',
         price: 1000,
         stock:100,
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         name: 'power troter',
-        description: 'Sapatillas para hacer spining',
+        description: 'zapatillas para hacer spining',
         state: 'disponible',
         price: 1000,
         stock:100,

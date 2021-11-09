@@ -114,12 +114,17 @@ const controlador = {
     res.redirect('/');
   },
 
-  remove: (req, res) => {
+  remove: async (req, res) => {
       const id = req.params.id;
-      //const producto = Producto.getById(id);
-      const listaProductos = Producto.getAll().filter(prod => prod.id != id);
-      Producto.modifiedAll(listaProductos);
-      res.render('products/list', { listaProductos: listaProductos })
+      const producto = await Producto.getById(id);
+      Producto.remove(producto)
+        .then(()=> {
+          res.redirect('/products') 
+        })
+        .catch((err)=>{
+          res.send(err)
+        });
+      
   }
 };
 
