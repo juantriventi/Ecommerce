@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const {Product, Brand} = require("./../src/database/models/index");
 
+const { body, validationResult } = require('express-validator');
+
 const productsFilePath = path.join(__dirname, '../src/database/db_productos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 

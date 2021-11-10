@@ -20,7 +20,7 @@
                 type="text" 
                 name="nombre" 
                 id="nombre"
-                value="<%= typeof producto!== 'undefined'? producto.nombre: '' %>" > 
+                value="<%= if(typeof valores != 'undefined') {%><%= valores.nombre %><%}%>" required > 
             <br>
 
             <label for="descripción">Descripción</label> <br>
@@ -28,15 +28,15 @@
                 type="text" 
                 name="descripcion" 
                 id="descripcion"
-                value="<%= typeof producto !== 'undefined'? producto.descripcion: ''%>"> 
+                 value="<%= if(typeof valores != 'undefined') {%><%= valores.descripcion %><%}%>" required> 
             <br>
             <label for="precio">Precio</label>
             <br>
-            <input type="number" name="precio" id="precio" value="<%= typeof producto !== 'undefined'? producto.precio: '' %>">
+            <input type="number" name="precio" id="precio" value="<%= if(typeof valores != 'undefined') {%><%= valores.precio %><%}%>" required>
             <br>
             <label for="imagen-producto">Imágenes</label> 
             <br>
-            <input type="file" name="imagen" id="imagen">
+            <input type="file" name="imagen" id="imagen" value="<%= if(typeof valores != 'undefined') {%><%= valores.imagen %><%}%>" required >
             <br>
             <label for="categoria">Categoría</label> 
             <br>
@@ -60,6 +60,16 @@
                 <button class="cre-entrar" type="submit"><%= typeof producto !== 'undefined'? 'EDITAR': 'CREAR' %></button>
             </div>
         </form>
+
+            <% if (typeOf validaciones != "undefined") { %>
+                <% validaciones.forEach( (validacion) => { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><%= validacion.msj %></strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% })
+            <% } %>
+
     </div>
     <%- include("../partials/footer") %>
 </body>

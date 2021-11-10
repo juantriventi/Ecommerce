@@ -3,7 +3,7 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 
-const { body } = require("express-validator");
+
 
 /*** devuelve los errores de los formularios ***/
 
@@ -33,6 +33,7 @@ const uploadFile = multer({
 let router = express.Router();
 
 const productosController = require("../controllers/productosController");
+const { appendFile } = require("fs");
 
 router.get("/", productosController.index);
 
