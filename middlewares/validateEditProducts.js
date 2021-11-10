@@ -6,7 +6,6 @@ module.exports = [
 	body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
     body('price').notEmpty().withMessage('Tienes que escribir un precio'),
     body('description').notEmpty().withMessage('Tienes que escribir una descripcion'),
-    body('extended').notEmpty().withMessage('Tienes que escribir una descripcion Ampliada')
-
+    
 	
 ]

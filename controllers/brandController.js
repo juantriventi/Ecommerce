@@ -1,5 +1,5 @@
 const path = require('path');
-let db = require('../database/models');
+let db = require('../src/database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Brand = db.Brand;

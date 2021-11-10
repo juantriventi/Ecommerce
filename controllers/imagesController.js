@@ -1,7 +1,7 @@
-const db = require('../database/models');
+const db = require('../src/database/models');
 const { Op } = require("sequelize");
 const sequelize = db.sequelize;
-const {Image} = require('../database/models');
+const {Image} = require('../src/database/models');
 
 const imagesController = {
 

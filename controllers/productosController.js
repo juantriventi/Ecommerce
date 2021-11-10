@@ -1,8 +1,8 @@
 const { render } = require("ejs");
 const { validationResult } = require("express-validator");
-const Producto = require("../models/products");
-const colores = require('../models/colores');
-const categorias = require('../models/categorias');
+const Producto = require("../src/database/models/product");
+const colores = require('../src/database/models/color');
+const categorias = require('../src/database/models/category');
 const { v4: uuidv4 } = require("uuid");
 
 const controlador = {

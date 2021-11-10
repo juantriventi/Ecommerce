@@ -1,4 +1,4 @@
-let db = require('../database/models');
+let db = require('../src/database/models');
 const User = db.User;
 
 function userLoggedMiddleware(req, res, next) {

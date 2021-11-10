@@ -28,7 +28,7 @@ const controlador = {
     login: (req,res) => {
         return res.render("users/login");
     },
-    processRegister: (req,res) => {
+    processRegister: async (req,res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -58,6 +58,8 @@ const controlador = {
                 password: bcryptjs.hashSync(req.body.password,10),
                 confirmarPassword: bcryptjs.hashSync(req.body.confirmarPassword,10)
             })        
+            console.log(userCreated)
+            return res.redirect("/users/login")
         }
         catch(error) {
             res.send(error)

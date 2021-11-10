@@ -4,7 +4,7 @@
 <body>
     <%- include("../partials/header") %>
     <div class="registro">
-        <form class="form-container" action="/users/register" method="POST">
+        <form class="form-container" action="/users/processRegister" method="POST">
             <p class="titulo-login">CREÁ TU CUENTA:</p>
             <label for="nombre">Nombre:</label> <br>
             <input type="text" name="nombre"  class="formulario-input <%= locals.errors && errors.nombre ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.nombre :null %>" > <br>
