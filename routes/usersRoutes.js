@@ -30,7 +30,7 @@ router.get("/detail/:id", authMiddleware, usersController.detail);
 //CRUD//
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post("/register", validations, logDBMiddleware, usersController.processRegister);
+router.post("/create", validations, logDBMiddleware, usersController.processRegister);
 
 router.get("/edit/:id", authMiddleware, usersController.edit);
 
