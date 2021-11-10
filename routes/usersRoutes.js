@@ -3,7 +3,6 @@ const express = require("express")
 const router = express.Router();
 let = logDBMiddleware = require("../middlewares/logDBMiddleware")
 const usersController = require("../controllers/usersController.js")
-const upload = require("../middlewares/multerMiddlewareUser")
 const authMiddleware = require("../middlewares/authMiddleware")
 const validations = require("../middlewares/validateRegisterMiddleware")
 const validationLogin = require("../middlewares/validateLogin")
