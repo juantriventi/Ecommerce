@@ -13,20 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // belongsTo
       Order.belongsTo(models.Status);
       // belongsTo
-      Order.belongsTo(models.Payment);
-      // belongsTo
       Order.belongsTo(models.User);
 
-      // hasOne
-      Order.hasOne(models.Shipping, {
-        foreignKey: 'orderId',
-        as: "shippings"
-      });
-     // hasOne 
-      Order.hasOne(models.Shipping, {
-        foreignKey: 'orderPaymentId',
-        as: "orderPayments"
-      });
       // hasMany
       Order.hasMany(models.OrderDetail, {
         foreignKey: 'orderId',

@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
     brandId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
     sizeId: DataTypes.INTEGER,
-    colorId: DataTypes.INTEGER
-  }, {
+    colorId: DataTypes.INTEGER,
+     }, {
     sequelize,
     modelName: 'Product',
   });

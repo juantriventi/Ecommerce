@@ -11,6 +11,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+
       productId: { 
         type: Sequelize.INTEGER,
         references: {
@@ -18,6 +19,7 @@ module.exports = {
           key: 'id'
         }
       },
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
