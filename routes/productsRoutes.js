@@ -2,18 +2,18 @@ const { Router } = require("express");
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
-
+const router = express.Router();
 
 
 /*** devuelve los errores de los formularios ***/
 
-const validateProduct = [
-  body("nombre").notEmpty().withMessage("Debe Completar Este campo"),
+//const validateProduct = [
+  //body("nombre").notEmpty().withMessage("Debe Completar Este campo"),
   //body('price').isInt({min: 1}).withMessage('El campo precio tiene que ser un numero mayor a 1'),
   //body('discount').isInt({min: 0, max:100}).withMessage('Descuento fuera de rango'),
   //body('category').notEmpty().withMessage('Debe Completar Este campo'),
   //body('description').notEmpty().withMessage('Debe Completar Este campo').bail().isLength({min:0,max:200}).withMessage('Tiene que escribir menos de 200 carateres'),
-];
+//];
 
 /***  multer se encarga de almacenar archivos en el servidor express ***/
 const storage = multer.diskStorage({
@@ -30,7 +30,7 @@ const uploadFile = multer({
   storage: storage,
 });
 
-let router = express.Router();
+
 
 const productosController = require("../controllers/productosController");
 const { appendFile } = require("fs");

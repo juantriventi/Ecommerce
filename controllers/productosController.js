@@ -73,12 +73,10 @@ const controlador = {
     res.redirect("/");
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const id = req.params.id
-    const producto = Producto.getById(id);
-    console.log(producto);
-    //res.send(producto)
-    res.render('products/create', {
+    const producto = await Producto.getById(id);
+    res.render("products/create", {
       producto: producto,
       colores: colores,
       categorias: categorias
