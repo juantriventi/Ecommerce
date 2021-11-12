@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const {Product, Brand} = require("./../src/database/models/index");
 
+const { body, validationResult } = require('express-validator');
+
 const productsFilePath = path.join(__dirname, '../src/database/db_productos.json');
 const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -31,12 +33,36 @@ const Producto = {
         await Product.create(producto);
     },
 
-    getByNombre: (nombre) => {
+    getByNombre: async(nombre) => {
         const producto = productos.find(prod => prod === nombre)
     },
-    modifiedAll: (productos)=>{
-        fs.writeFileSync(productsFilePath, JSON.stringify(productos))
+
+    update: async(producto) => {
+        const {
+            name, 
+            price,
+            image, 
+            description} = producto;
+
+        await Product.update(
+            {
+                name,
+                image,
+                price,
+                description,
+            }, 
+            {
+                where: {
+                    id:producto.id,
+                }
+            });
     },
+    
+
+    remove: async (producto) => {
+      await Product.destroy({where:{id:producto.id}})
+    }
 }
 
 module.exports = Producto;
+
