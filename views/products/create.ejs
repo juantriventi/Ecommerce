@@ -43,8 +43,15 @@
                 <br>
                 <label for="imagen-producto">Imágenes</label>
                 <br>
-                <input type="file" name="imagen" id="imagen"
-                    value='<%= typeof producto !== 'undefined'? producto.image : '' %>' 
+                <input 
+                    type="file" 
+                    name="imagen" 
+                    id="imagen"
+                    accept="image/png, image/jpeg, image/jpg, image/gif"
+                    value='<%= typeof producto !== 'undefined'? producto.image : '' %>'
+                    <% if(typeof producto === 'undefined'){ %>
+                    required
+                    <%}%>
                 >
                 <br>
 

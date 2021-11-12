@@ -1,0 +1,1 @@
+{"modo":1,"tiempo":3000,"repeticiones":5}

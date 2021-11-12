@@ -11,9 +11,9 @@ const reglasValidacion = ()=> {
                 .isLength({min:20})
                 .withMessage("Debe tener al menos 20 caracteres"),    
             
-              
-            body ("imagen")
-                
+             
+            /*    
+            body ("file")
                 .notEmpty()
                 .withMessage("Seleccione una imagen valida"),
             
