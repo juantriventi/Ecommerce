@@ -1,13 +1,15 @@
+const path = require("path");
 const { render } = require("ejs");
 const { validationResult } = require("express-validator");
 const Producto = require("../src/database/models/product");
 const colores = require('../src/database/models/color');
 const categorias = require('../src/database/models/category');
 const { v4: uuidv4 } = require("uuid");
+const {Op} = require("sequelize")
 
 const controlador = {
   index: async (req, res) => {
-    const listaProductos = await Producto.getAll();
+    const listaProductos = await Producto.findAll();
     res.render("products/list", {
       listaProductos: listaProductos,
     });
@@ -19,7 +21,7 @@ const controlador = {
     const product = await Producto.search(query);
 
     if(product === null){
-      res.send('producto no ecnotrado');
+      res.send('producto no encotrado');
     }else {
       res.redirect(`/products/detalle/${product.id}`);
     }    
