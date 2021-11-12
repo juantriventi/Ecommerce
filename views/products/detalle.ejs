@@ -26,12 +26,12 @@
             </div>
 
             <div class="comprar-detalle" >
-                <a href="/products/create/<%=producto.id%>">Editar</a>     
+                <a href="/products/update/<%=producto.id%>">Editar</a>    
             </div>
 
             <div class="comprar-detalle" >
                 <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button id="eliminar" type="submit" > Eliminar</button>
+                    <button style="color:crimson;font-weight: bolder;" id="eliminar" type="submit"> Eliminar</button>
                 </form>
             </div>
            

@@ -34,7 +34,7 @@ const controlador = {
   carrito: (req, res) => {
     res.render("products/carrito");
   },
-  create: (req, res) => {
+  create: async(req, res) => {
     res.render("products/create", {
       colores: colores,
       categorias: categorias
@@ -48,17 +48,15 @@ const controlador = {
 
       // al mapear creo un nuevo array sin modificar el existente
       const { nombre,precio, descripcion} = req.body;
-      file = req.file;
-      if(!file){
-        // manejo algun error
-      }
+      
+      const image = req.file.filename;
      
 
       const nuevoProducto = {
         name: nombre,
         price: precio,
         description: descripcion,
-        image: file.filename,
+        image,
         stock: 1000
         //categoria: categoria,
        // color: color,
@@ -73,45 +71,42 @@ const controlador = {
     res.redirect("/");
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const id = req.params.id
-    const producto = Producto.getById(id);
+    const producto = await Producto.getById(id);
     console.log(producto);
-    //res.send(producto)
-    res.render('products/create', {
-      producto: producto,
-      colores: colores,
-      categorias: categorias
-    });
+    res.render('products/create', {producto})
   },
 
-  put: (req, res) => {
+  put: async(req, res) => {
     const id = req.params.id;
-    const producto = Producto.getById(id);
+    const producto = await Producto.getById(id);
 
-    const {nombre, categoria, precio, color, descripcion} = req.body;
+    const { nombre, precio, descripcion} = req.body;
+    
+    
 
-    file = req.file;
-    if (file){
-      producto.img = file.filename;
+    image = producto.image;
+
+    if(typeof req.file !== 'undefined'){
+      image = req.file.filename;
     }
 
-    producto.nombre = nombre;
-    producto.precio = precio;
-    producto.descripcion = descripcion;
-    producto.categoria = categoria;
-    producto.color = color;
+    
+     productoActualizado = {
+      id:producto.id,
+      name: nombre,
+      price: precio,
+      description: descripcion,
+      image,
+      stock: 1000
+      //categoria: categoria,
+     // color: color,
+    };
 
-    listaProductos = Producto.getAll();
-    listaProductos.forEach(prod => {
-      if(prod.id === producto.id){
-        prod = producto
-      }
-    });
-
-    Producto.modifiedAll(listaProductos);
-
-    res.redirect('/');
+   await Producto.update(productoActualizado);
+    
+    res.redirect('/products');
   },
 
   remove: async (req, res) => {

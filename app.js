@@ -4,15 +4,12 @@ const productsRoutes = require("./routes/productsRoutes.js");
 const usersRoutes = require("./routes/usersRoutes.js");
 const logMiddleware = require("./middlewares/logMiddleware");
 
+
 const createErrors = require('http-errors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const methodOverride =  require('method-override');
 const session = require('express-session');
-
-
-
-
 
 
 const app= express();
@@ -35,5 +32,3 @@ app.use('/', (req, res) => res.json({ clave: "con el server" }));
 app.listen(port, () => 
 console.log("Levantando un servidor con Express en el puerto" + port)
 )
-
-
