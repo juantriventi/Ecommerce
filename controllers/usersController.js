@@ -1,21 +1,21 @@
-
 const path = require("path");
 let db = require("../src/database/models")
-const sequelize = db.sequelize
+const sequelize = db.sequelize;
 const {Op} = require("sequelize")
+
 const bcryptjs = require("bcryptjs")
 const { validationResult } = require('express-validator');
-const { userInfo } = require("os");
-const User = db.User
+
+const User = db.User;
 
 
-const controlador = {
+const usersController = {
 
     list: (req,res) => {
         User.findAll()
-        .then(users=>{
+        .then(users => {
             res.render("users/users", {users})
-        })
+        });
     },
 
     detail: (req,res) => {
@@ -25,10 +25,14 @@ const controlador = {
             res.render("users/userDetail", {users})
         })
     },
+
     login: (req,res) => {
         return res.render("users/login");
     },
+
     processRegister: async (req,res) => {
+        console.log("Entre en el create user");
+
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
@@ -37,6 +41,10 @@ const controlador = {
                 oldData: req.body,
             });
         }
+
+        console.log("Antes de ver si existe el mail");
+
+        // Veo si el mail ya esta registrado
         let userInDB = await User.findOne({
             where: {email:req.body.email}
         })
@@ -50,10 +58,15 @@ const controlador = {
                 oldData: req.body
             });
         }
+
+        console.log("Antes de crear el usuario");
+
+        // Si pasa las validaciones, crea el usuario y encripta la contraseña
         try {
             let userCreated = await User.create({
-                nombre: req.body.nombre, 
-                apellido: req.body.apellido,
+                firstName: req.body.firstName, 
+                lastName: req.body.lastName,
+                userName: req.body.userName,
                 email: req.body.email,
                 street: req.body.street,
                 number: req.body.number,
@@ -63,27 +76,30 @@ const controlador = {
                 apartment: req.body.apartment,
                 cp: req.body.cp,
                 phone_number: req.body.phone_number,                
-                password: bcryptjs.hashSync(req.body.password,10),
-                confirmarPassword: bcryptjs.hashSync(req.body.confirmarPassword,10)
-            })        
+                password: bcryptjs.hashSync(req.body.password,10)
+            })
+
             console.log(userCreated)
+        
             return res.redirect("/users/login")
+
         }
         catch(error) {
             res.send(error)
         }
-     },
+    },
+
     register: (req,res) => {
         return res.render("users/register");
     },
 
     edit: (req,res) => {
-        let userId = req.params.id
+        let userId = req.params.id;
         let promUsers = User.findByPk(userId)
         Promise
         .all([promUsers])
         .then((users) => {
-            return res.render(path.resolve(__dirname,"..","views","users/userEdit"),{users})
+            return res.render(path.resolve(__dirname,"..","views","users/userEdit"), {users,userId})
         })
         .catch(error => res.send(error))
     },
@@ -94,8 +110,9 @@ const controlador = {
             let userId = req.params.id 
             const userUpdate = await User.update(
                 {
-                    nombre: req.body.nombre, 
-                    apellido: req.body.apellido,
+                    firstName: req.body.firstName, 
+                    lastName: req.body.lastName,
+                    userName: req.body.userName,
                     email: req.body.email,
                     street: req.body.street,
                     number: req.body.number,
@@ -183,4 +200,4 @@ const controlador = {
         return res.redirect("/")
     }
 }
-    module.exports = controlador
+    module.exports = usersController;

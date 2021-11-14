@@ -4,19 +4,19 @@ const path=require('path');
 const cors=require("cors");
 const methodOverride =  require('method-override');
 const session = require('express-session');
-const cookies = require("cookie-parser")
-const port=process.env.port || 3030;
+const cookies = require("cookie-parser");
+
+const PORT=process.env.PORT || 3030;
 
 const logMiddleware = require("./middlewares/logMiddleware");
-
-
 const createErrors = require('http-errors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 
+
 app.set("views", path.resolve(__dirname, "./views"));
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.resolve(__dirname, "./public")));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -25,12 +25,13 @@ app.use(logMiddleware);
 app.use(methodOverride('_method'));
 app.use(cors())
 
+// User
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 app.use(session({
-    secret:"shh it´s a secret", 
+    secret:"Shh it's a secret", 
     resave: false,
     saveUninitialized: false,
-    }))
+}))
 app.use(cookies())
 app.use(userLoggedMiddleware)
 
@@ -56,8 +57,6 @@ app.use("/sizes", sizeRoutes)
 app.use("/categories", categoryRoutes)
 
 // app.use('/', (req, res) => res.json({ clave: "con el server" })); 
-app.listen(port, () => 
-console.log("Levantando un servidor en el puerto" + port)
+app.listen(PORT, () => 
+    console.log("Levantando un servidor en el puerto " + PORT)
 )
-
-

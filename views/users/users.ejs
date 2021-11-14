@@ -4,14 +4,17 @@
 <body>
     <%- include("../partials/header") %>
    <main>
-       <h4>Listado de Usuarios</h4>
        <div>
-           <a href="users/register">Crear Usuario</a>
+           <% if(!locals.isLogged) { %>
+            <a href="users/register">Crear Usuario</a>
+           <% } %>
        </div>
+       <br><br>
+       <h4>Listado de Usuarios</h4>
        <ul>
-           <% for(let i = 0; i < users.lenght; i++) { %>
+           <% for(let i = 0; i < Object.keys(users).length; i++) { %>
             <li>
-                <a href="users/detail/<%=users[i].id%>"><%=users[i].nombre%> <%=users[i].apellido%></a>
+                <a href="users/detail/<%=users[i].id%>"><%=users[i].firstName%> <%=users[i].lastName%></a>
             </li>
           <% } %>
        </ul>

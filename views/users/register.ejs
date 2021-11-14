@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("../partials/head") %>
-<body>
-    <%- include("../partials/header") %>
-    <div class="registro">
-        <form class="form-container" action="/users/create" method="POST">
-            <p class="titulo-login">CREÁ TU CUENTA:</p>
-            <label for="userName">Usuario:</label> <br>
-            <input type="text" name="userName"  class="formulario-input <%= locals.errors && errors.userName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.userName :null %>" > <br>
+    <body>
+        <%- include("../partials/header") %>
+        <div class="registro">
+            <form class="form-container" action="/users/create" method="POST">
+                <p class="titulo-login">CREÁ TU CUENTA:</p>
+
+                <label for="userName">Usuario:</label> <br>
+                <input type="text" id="userName" name="userName"  class="formulario-input <%= locals.errors && errors.userName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.userName :null %>" > <br>
                 <% if (locals.errors && errors.userName) { %>       
-            <div class="texto-error">
-                <%= errors.userName.msg %>
-            </div>
-            <% } %>
-            <label for="firstName">Nombre:</label> <br>
-            <input type="text" name="firstName"  class="formulario-input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.firstName :null %>" > <br>
-                <% if (locals.errors && errors.firstName) { %>       
-            <div class="texto-error">
-                <%= errors.firstName.msg %>
-            </div>
-            <% } %>
-            <label for="lastName">Apellido:</label> <br>
-            <input type="text" name="lastName"  class="formulario-input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.lastName :null %>" > <br>
-            <% if (locals.errors && errors.lastName) { %>
-                <div class="texto-error">
-                    <%= errors.lastName.msg %>
-                </div>
+                    <div class="texto-error">
+                        <%= errors.userName.msg %>
+                    </div>
                 <% } %>
-            <label for="email">Email:</label> <br>
-            <input type="email" name="email" class="formulario-input <%= locals.errors && errors.email ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.email :null %>" >
-           <br>
-            <% if (locals.errors && errors.email) { %>       
-                <div class="texto-error">
-                    <%= errors.email.msg %>
-                </div>
+
+                <label for="firstName">Nombre:</label> <br>
+                <input type="text" id="firstName" name="firstName"  class="formulario-input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.firstName :null %>" > <br>
+                <% if (locals.errors && errors.firstName) { %>       
+                    <div class="texto-error">
+                        <%= errors.firstName.msg %>
+                    </div>
+                <% } %>
+
+                <label for="lastName">Apellido:</label> <br>
+                <input type="text" id="lastName" name="lastName"  class="formulario-input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.lastName :null %>" > <br>
+                <% if (locals.errors && errors.lastName) { %>
+                    <div class="texto-error">
+                        <%= errors.lastName.msg %>
+                    </div>
+                <% } %>
+
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" class="formulario-input <%= locals.errors && errors.email ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.email :null %>" >
+                <br>
+                <% if (locals.errors && errors.email) { %>       
+                    <div class="texto-error">
+                        <%= errors.email.msg %>
+                    </div>
                 <% } %>
 
                 <label for="street">Calle:</label> <br>
@@ -42,73 +46,76 @@
                     <div class="texto-error">
                         <%= errors.street.msg %>
                     </div>
-                    <% } %>
-
-                    <label for="number">Número:</label> <br>
-                    <input type="text" id="number" name="number"  class="formulario-input <%= locals.errors && errors.number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.number :null %>" > <br>
-                    <% if (locals.errors && errors.number) { %>
-                        <div class="texto-error">
-                            <%= errors.number.msg %>
-                        </div>
-                        <% } %>
-
-                        <label for="city">Ciudad:</label> <br>
-                        <input type="text" id="city" name="city"  class="formulario-input <%= locals.errors && errors.city ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.city :null %>" > <br>
-                        <% if (locals.errors && errors.city) { %>
-                            <div class="texto-error">
-                                <%= errors.city.msg %>
-                            </div>
-                            <% } %>
-
-                            <label for="state">Provincia:</label> <br>
-                            <input type="text" id="state" name="state"  class="formulario-input <%= locals.errors && errors.state ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.state :null %>" > <br>
-                            <% if (locals.errors && errors.state) { %>
-                                <div class="texto-error">
-                                    <%= errors.state.msg %>
-                                </div>
-                                <% } %>
-
-                                <label for="floor">Piso:</label> <br>
-                                <input type="text" id="floor" name="floor"  class="formulario-input <%= locals.errors && errors.floor ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.floor :null %>" > <br>
-                               
-                                    <label for="apartment">Departamento:</label> <br>
-                                    <input type="text" id="apartment" name="apartment"  class="formulario-input <%= locals.errors && errors.apartment ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.apartment :null %>" > <br>
-                                   
-                                        <label for="cp">Código Postal:</label> <br>
-                                        <input type="text" id="cp" name="cp"  class="formulario-input <%= locals.errors && errors.cp ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.cp :null %>" > <br>
-                                        <% if (locals.errors && errors.cp) { %>
-                                            <div class="texto-error">
-                                                <%= errors.cp.msg %>
-                                            </div>
-                                            <% } %>
-                                            
-                                            <label for="phone_number">Teléfono:</label> <br>
-                                            <input type="text" id="phone_number" name="phone_number"  class="formulario-input <%= locals.errors && errors.phone_number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.phone_number :null %>" > <br>
-                                            <% if (locals.errors && errors.phone_number) { %>
-                                                <div class="texto-error">
-                                                    <%= errors.phone_number.msg %>
-                                                </div>
-                                                <% } %>
-
-            <label for="password">Contraseña:</label><br>
-            <input type="password" name="password" class="formulario-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.password :null %>" > <br>
-            <% if (locals.errors && errors.password) { %>       
-                <div class="texto-error">
-                    <%= errors.password.msg %>
-                </div>
                 <% } %>
-            <label for="password">Repita la contraseña:</label><br>
-            <input type="password" name="confirmPassword"  class="formulario-input <%= locals.errors && errors.confirmPassword ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.confirmPassword :null %>"> <br>
-            <% if (locals.errors && errors.confirmPassword) { %>       
-                <div class="texto-error">
-                    <%= errors.confirmPassword.msg %>
-                </div>
+
+                <label for="number">Número:</label> <br>
+                <input type="text" id="number" name="number"  class="formulario-input <%= locals.errors && errors.number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.number :null %>" > <br>
+                <% if (locals.errors && errors.number) { %>
+                    <div class="texto-error">
+                        <%= errors.number.msg %>
+                    </div>
                 <% } %>
-            <div class="botones">
-            <button class="entrar" type="submit">CREAR</button>
-            </div>
-        </form>
-    </div>
-    <%- include("../partials/footer") %>     
+
+                <label for="floor">Piso:</label> <br>
+                <input type="text" id="floor" name="floor"  class="formulario-input <%= locals.errors && errors.floor ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.floor :null %>" > <br>
+                            
+                <label for="apartment">Departamento:</label> <br>
+                <input type="text" id="apartment" name="apartment"  class="formulario-input <%= locals.errors && errors.apartment ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.apartment :null %>" > <br>
+
+                <label for="city">Ciudad:</label> <br>
+                <input type="text" id="city" name="city"  class="formulario-input <%= locals.errors && errors.city ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.city :null %>" > <br>
+                <% if (locals.errors && errors.city) { %>
+                    <div class="texto-error">
+                        <%= errors.city.msg %>
+                    </div>
+                <% } %>            
+
+                <label for="state">Provincia:</label> <br>
+                <input type="text" id="state" name="state"  class="formulario-input <%= locals.errors && errors.state ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.state :null %>" > <br>
+                <% if (locals.errors && errors.state) { %>
+                    <div class="texto-error">
+                        <%= errors.state.msg %>
+                    </div>
+                <% } %>
+
+                                    
+                <label for="cp">Código Postal:</label> <br>
+                <input type="text" id="cp" name="cp"  class="formulario-input <%= locals.errors && errors.cp ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.cp :null %>" > <br>
+                <% if (locals.errors && errors.cp) { %>
+                    <div class="texto-error">
+                        <%= errors.cp.msg %>
+                    </div>
+                <% } %>
+                                                
+                <label for="phone_number">Teléfono:</label> <br>
+                <input type="text" id="phone_number" name="phone_number"  class="formulario-input <%= locals.errors && errors.phone_number ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.phone_number :null %>" > <br>
+                <% if (locals.errors && errors.phone_number) { %>
+                    <div class="texto-error">
+                        <%= errors.phone_number.msg %>
+                    </div>
+                <% } %>
+
+                <label for="password">Contraseña:</label><br>
+                <input type="password" id="password" name="password" class="formulario-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.password :null %>" > <br>
+                <% if (locals.errors && errors.password) { %>       
+                    <div class="texto-error">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+
+                <label for="confirmPassword">Repita la contraseña:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword"  class="formulario-input <%= locals.errors && errors.confirmPassword ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.confirmPassword :null %>"> <br>
+                <% if (locals.errors && errors.confirmPassword) { %>       
+                    <div class="texto-error">
+                        <%= errors.confirmPassword.msg %>
+                    </div>
+                <% } %>
+
+                <div class="botones">
+                    <button class="entrar" type="submit">CREAR</button>
+                </div>
+            </form>
+        </div>
+        <%- include("../partials/footer") %>     
     </body>
 </html>

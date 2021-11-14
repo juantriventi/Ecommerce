@@ -12,9 +12,6 @@ const { body } = require("express-validator");
 //const PoolCluster = require("mysql2/typings/mysql/lib/PoolCluster");
 
 
-
-
-
 router.get("/", usersController.list);
 
 router.get("/login", guestMiddleware, usersController.login);
@@ -29,11 +26,9 @@ router.get("/detail/:id", authMiddleware, usersController.detail);
 
 //CRUD//
 router.get("/register", guestMiddleware, usersController.register);
-
-router.post("/create", validations, logDBMiddleware, usersController.processRegister);
+router.post("/create", validations, usersController.processRegister);
 
 router.get("/edit/:id", authMiddleware, usersController.edit);
-
 router.put("/update/:id", usersController.update);
 
 router.delete("/delete/:id", usersController.destroy);

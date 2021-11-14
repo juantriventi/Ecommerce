@@ -4,10 +4,16 @@
 <body>
     <%- include("../partials/header") %>
     <main>
-        <h2>Hola <%= user.nombre %></h2></br>
-        <p>Nombre: <%= user.nombre %></p>
-        <p>Apellido: <%= user.apellido %></p>
-        <p>Email: <%= user.email %></p>
+        <p>Nombre: <%= users.firstName %></p>
+        <p>Apellido: <%= users.lastName %></p>
+        <p>Email: <%= users.email %></p>
+        <p>Direccion: <%= users.street %> <%= users.number %> <%= users.floor %> <%= users.apartment %></p>
+        <p>Ciudad: <%= users.city %></p>
+        <p>Provincia: <%= users.state %></p>
+        <p>Codigo postal: <%= users.cp %></p>
+        <p>Numero de telefono: <%= users.phone_number %></p>
+
+
         <div class="comprar-detalle" >            
             <button id="eliminar" type="submit">
                 <a href="/users/edit/<%= users.id %>">
