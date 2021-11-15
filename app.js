@@ -15,9 +15,13 @@ const session = require('express-session');
 const app= express();
 const port=3030;
 const path=require('path');
+const { sessionConfig, sessionMiddleware } = require("./middlewares/sessionManager.js");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(session(sessionConfig));
+app.use(sessionMiddleware);
 
 app.use(logMiddleware);
 app.use(express.urlencoded({ extended:false }));

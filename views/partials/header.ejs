@@ -2,8 +2,19 @@
     <div class="pre-header">
         <div class="login">
             <ul>
-                <li><a href="/users/register">Creá tu cuenta  |</a></li>            
-                <li><a href="/users/login">Ingresá</a><i class="fas fa-sign-in-alt"></i></li>                                    
+                <% if(!auth.isLoged){ %>
+                    <li><a href="/users/register">Creá tu cuenta  |</a></li>
+                    <li><a href="/users/login">Ingresá</a><i class="fas fa-sign-in-alt"></i></li>  
+                <%}else{%>
+                    <li style="margin-top: 4px; margin-right: 8px;"><a href="users/detail/<%=auth.user.id%>"><%=auth.user.userName%></a></li>
+                    <li >
+                        <form action="/users/logout" method="post">
+                            <button class="btn btn-sm btn-danger" type="submit">Logout</button>
+                        </form>
+                    </li>
+                <%} %>
+                          
+                                                    
             </ul>
     </div>       
     <div class="header-cont">

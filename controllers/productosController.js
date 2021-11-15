@@ -1,12 +1,12 @@
 const { render } = require("ejs");
 const { validationResult } = require("express-validator");
-const Producto = require("../models/products");
-const colores = require('../models/colores');
-const categorias = require('../models/categorias');
+const Producto = require("../services/products");
+const colores = require('../services/colores');
+const categorias = require('../services/categorias');
 const { v4: uuidv4 } = require("uuid");
 
 const controlador = {
-  index: async (req, res) => {
+  list: async (req, res) => {
     const listaProductos = await Producto.getAll();
     res.render("products/list", {
       listaProductos: listaProductos,

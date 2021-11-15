@@ -1,27 +1,28 @@
 const { Router } = require("express");
 const express = require("express")
 let router = express.Router();
-let = logDBMiddleware = require("../middlewares/logDBMiddleware")
+let = logDBMiddleware = require("../middlewares/logDBMiddleware");
+const {
+    reglasValidacionUser, 
+    validacionUserMiddleware, 
+    validacionAuthUser,
+    userIsLoged
+} = require('../middlewares/validacionUserMiddleware');
 const usersController = require("../controllers/usersController.js")
 
-
-const { body } = require("express-validator");
-
-const validations = [
-    body("nombre").notEmpty().withMessage("Coloca tu nombre"),
-    body("apellido").notEmpty().withMessage("Coloca tu apellido"),
-    body("email")
-        .notEmpty().withMessage("Tenes que poner un mail").bail()
-        .isEmail().withMessage("Tienes que poner un formato de correo electronico valido"),
-    body("password").notEmpty().withMessage("Pon una contraseña"),
-    body("confirmPassword").notEmpty().withMessage("Repite la contraseña anterior")
-]
 
 router.get("/login", usersController.login);
 
 router.get("/register", usersController.register);
 
-router.post("/register", validations, logDBMiddleware, usersController.processRegister);
+router.post("/register", reglasValidacionUser(), validacionUserMiddleware, logDBMiddleware, usersController.store);
 
+router.post("/auth",validacionAuthUser, usersController.auth);
+
+router.get("/detail/:id",userIsLoged, usersController.detail);
+
+router.post("/logout",userIsLoged, usersController.logout);
+
+router.delete("/delete/:id",userIsLoged, usersController.delete);
 
 module.exports = router;

@@ -4,14 +4,16 @@
 <body>
     <%- include("../partials/header") %>
     <div class="registro">
-        <form class="form-container" action="/users/login" method="POST">
+        <form class="form-container" action="/users/auth" method="POST">
             <p class="titulo-login">INICIA SESION:</p>
-            <label for="usuario">Nombre de usuario:</label> <br>
-            <input type="text" name="usuario" id="usuario" required> <br>
+            <label for="email">E-mail:</label> <br>
+            <input type="email" name="email" id="email" required> <br>
+
             <label for="password">Contraseña:</label><br>
             <input type="password" name="password" id="password" required><br>
-                        <div class="botones">
-            <button class="entrar" type="submit">ENTRAR</button>
+            
+            <div class="botones">
+                <button class="entrar" type="submit">ENTRAR</button>
             </div>
             <p class="texto-notenes">No tenes cuenta? <a href="users/register">Crea una!</a> </p>
         </form>

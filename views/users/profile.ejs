@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <h2>Hola <%= user.firstName %></h2></br>
+        <p>Nombre: <%= user.firstName %></p>
+        <p>Apellido: <%= user.lastName %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Direccion: <%= user.street %> <%= user.number %> <%= user.floor %> <%= user.apartment %></p>
+        <p>Ciudad: <%= user.city %></p>
+        <p>Provincia: <%= user.state %></p>
+        <p>Codigo postal: <%= user.cp %></p>
+        <p>Numero de telefono: <%= user.phone_number %></p>
+        <br><br>
+        <a href="/users/logout">LOGOUT</a>
+        <br>
+        <a href="/users">LISTADO DE USUARIOS</a>
+    </main>
+    <%- include("../partials/footer") %>     
+    </body>
+</html>

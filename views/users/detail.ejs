@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <section class="container mt-4">
+            <article class="card p-4">
+                <p>Nombre: <span><%= user.firstName %></span></p>
+                <p>Apellido: <%= user.lastName %></p>
+                <p>Email: <%= user.email %></p>
+                <p>Direccion: <%= user.street %> <%= user.number %> <%= user.floor %> <%= user.apartment %></p>
+                <p>Ciudad: <%= user.city %></p>
+                <p>Provincia: <%= user.state %></p>
+                <p>Codigo postal: <%= user.cp %></p>
+                <p>Numero de telefono: <%= user.phone_number %></p>
+        
+        
+                <div class="comprar-detalle mt-4" >
+                    <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger" type="submit">ELIMINAR</button>
+                    </form>
+                </div>
+            </article>
+           
+        </section>
+    </main>
+    <%- include("../partials/footer") %>     
+    </body>
+</html>

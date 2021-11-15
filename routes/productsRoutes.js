@@ -26,7 +26,7 @@ const uploadFile = multer({
 const productosController = require("../controllers/productosController");
 const { appendFile } = require("fs");
 
-router.get("/", productosController.index);
+router.get("/", productosController.list);
 
 router.post("/buscar", productosController.search);
 

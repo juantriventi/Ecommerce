@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/header") %>
+
+        <h2>Hola <%= users[userId-1].firstName %></h2>
+   
+        <div class="registro">
+            <form class="form-container" action="/users/update/<%= users.id %>?_method=PUT" method="POST">
+                <h3 class="titulo-login">EDITÁ TU CUENTA:</h3>
+
+                <label for="firstName">Nombre:</label> <br>
+                <input type="text" name="firstName" id="firstName" class="formulario-input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" value="<%= users[userId-1].firstName %>" required> <br>
+                
+                <label for="lastName">Apellido:</label> <br>
+                <input type="text" id="lastName" name="lastName"  class="formulario-input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" value="<%=users[userId-1].lastName%>" required> <br>
+            
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" class="formulario-input <%= locals.errors && errors.email ? 'is-invalid' : null %>"  value="<%=users[userId-1].email%>" required disabled>
+                <br>
+
+                <label for="password">Contraseña:</label><br>
+                <input type="password" id="password" name="password" class="formulario-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" value="<%=users[userId-1].password%>" disabled> <br>
+                
+                <label for="confirmPassword">Repita la contraseña:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword"  class="formulario-input <%= locals.errors && errors.confirmPassword ? 'is-invalid' : null %>" value="<%=users.confirmPassword%>" disabled> <br>
+                
+                <div class="botones">
+                <button class="entrar" type="submit">ACTUALIZAR</button>
+                </div>
+            </form>
+            
+        </div>
+        <form onSubmit="return confirm('Estas seguro de querer borrar el usuario?')" action="/users/delete/<%= users.id %>?_method=DELETE" method="POST">
+            <button class="entrar" type="submit">ELIMINAR</button>
+        </form>
+        <%- include("../partials/footer") %>     
+    </body>
+</html>

@@ -28,7 +28,7 @@ const reglasValidacion = ()=> {
 }
 
 const validacionProductoMiddleware = (req, res, next) =>{
-    console.log(req.file)
+
     const errors = validationResult(req)
     if (!errors.isEmpty()){
      /*   if (req.params.id) {
