@@ -15,7 +15,7 @@
         <%} %>
 
         <% if(typeof producto !== 'undefined' && typeof producto.id !== 'undefined'){%> 
-            <form
+            <form class="form-container"
             action="/products/update/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             
             <%}else{%>
@@ -28,19 +28,26 @@
                 type="text" 
                 name="nombre" 
                 id="nombre"
-                value="<%= typeof producto !== 'undefined'? producto.name : '' %> "
-                
-                >
+                value="<%= typeof producto !== 'undefined'? producto.name : '' %> ">
+                <span id="nombre_error" class="error is-invalid">
+                    <%= locals && locals.errors && locals.errors.nombre && locals.errors.nombre.msg %>
+                </span>
                 <br>
                 <label for="descripción">Descripción</label> <br>
                 <input type="text" name="descripcion" id="descripcion"
                     value='<%= typeof producto !== 'undefined'? producto.description : '' %> '>
+                    <span id="descripcion_error" class="error is-invalid">
+                        <%= locals && locals.errors && locals.errors.descripcion && locals.errors.descripcion.msg %>
+                    </span>
                 <br>
                 <label for="precio">Precio</label>
                 <br>
                 <input type="number" name="precio" id="precio"
                     value='<%= typeof producto !== 'undefined'? producto.price : '' %>'>
-                <br>
+                    <span id="precio_error" class="error is-invalid">
+                        <%= locals && locals.errors && locals.errors.precio && locals.errors.precio.msg %>
+                    </span>
+                    <br>
                 <label for="imagen-producto">Imágenes</label>
                 <br>
                 <input 
@@ -53,6 +60,9 @@
                     required
                     <%}%>
                 >
+                <span id="imagen_error" class="error is-invalid">
+                    <%= locals && locals.errors && locals.errors.imagen && locals.errors.imagen.msg %>
+                </span>
                 <br>
 
                 <div class="cre-botones">
@@ -62,6 +72,7 @@
             </form>
     </div>
     <%- include("../partials/footer") %>
+    <script src="/js/validar-producto.js"></script>  
 </body>
 
 </html>
