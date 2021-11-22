@@ -2,7 +2,7 @@ window.addEventListener("load", function(){
 
     // Capturar elementos
     
-    const form = document.querySelector(".form-container");
+    const form = document.querySelector("form");
     const nombre = document.getElementById("nombre");
     const descripcion = document.getElementById("descripcion");
     const precio = document.getElementById("precio");
@@ -93,7 +93,7 @@ window.addEventListener("load", function(){
     }
     // imagenes
     function imagenValidator () {
-        const imagen = document.querySelector("#imagen");
+        const imagen = document.getElementById("imagen");
         const imagenError = document.querySelector("#imagen_error");
         let feedback = ''; 
         console.log(imagen);
