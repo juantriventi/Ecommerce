@@ -1,7 +1,7 @@
 window.addEventListener("load", function(){
     
     // Capturo elementos
-    let form = document.querySelector("form");
+    let form = document.querySelector(".form-container");
     let userName = document.getElementById("userName");
     let firstName = document.getElementById("firstName");
     let lastName = document.getElementById("lastName");    
