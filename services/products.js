@@ -34,7 +34,8 @@ const Producto = {
     },
 
     getByNombre: async(nombre) => {
-        const producto = productos.find(prod => prod === nombre)
+        const producto = await Product.findOne({where:{name:nombre}})
+        return producto;
     },
 
     update: async(producto) => {
