@@ -3,9 +3,9 @@ const mainRoutes = require("./routes/mainRoutes.js");
 const productsRoutes = require("./routes/productsRoutes.js");
 const usersRoutes = require("./routes/usersRoutes.js");
 const logMiddleware = require("./middlewares/logMiddleware");
-const productsApiRouter = require("./routes/products.api");
+const productsApiRouter = require("./routes/api/products.api");
 const cors = require("cors");
-
+const apiRouter = require ("./routes/apiRoutes");
 const createErrors = require('http-errors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 app.use("/users", usersRoutes);
-app.use("/api/products", productsApiRouter)
+app.use("/api", apiRouter);
 app.use('/', (req, res) => res.json({ clave: "con el server" })); 
 app.listen(port, () => 
 console.log("Levantando un servidor con Express en el puerto" + port)
