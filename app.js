@@ -4,6 +4,7 @@ const productsRoutes = require("./routes/productsRoutes.js");
 const usersRoutes = require("./routes/usersRoutes.js");
 const logMiddleware = require("./middlewares/logMiddleware");
 const productsApiRouter = require("./routes/api/products.api");
+const usersApiRouter = require("./routes/api/usersApi");
 const cors = require("cors");
 const apiRouter = require ("./routes/apiRoutes");
 const createErrors = require('http-errors');
@@ -19,6 +20,7 @@ const path=require('path');
 const { sessionConfig, sessionMiddleware } = require("./middlewares/sessionManager.js");
 const router = require("./routes/productsRoutes.js");
 const productsApi = require("./controllers/api/products.controller.api.js");
+const usersApi = require("./controllers/api/usersApiController.js")
 
 app.use(cors());
 app.use(bodyParser.json());

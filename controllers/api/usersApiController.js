@@ -43,8 +43,6 @@ const usersAPIController = {
         }
     },
     detail: (req, res) =>{
-        console.log('entre a la api de detalle de usuario')
-        console.log('----------------------------')
         let userId = req.params.id;
         User.findByPk(userId, 
             {
