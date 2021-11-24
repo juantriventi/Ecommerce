@@ -1,0 +1,10 @@
+<% products.forEach(product => { %>
+                <div class="ropa">
+                    <a href="/products/detail/<%= product.id %>">
+                        <img class="imagenZapatilla" src='/images/<%= product.images[0].name %>'> </img> 
+                        
+                        <h3 class="titulozapatilla"> <%= product.name %> </h3>
+                        <p class="precioZapatilla"> $<%= product.price %> </p> 
+                    </a>
+                </div>
+                <% })%> 

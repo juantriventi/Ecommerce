@@ -56,7 +56,8 @@ body {
 .login {
     padding-right: 30px; 
     border-bottom: 1px solid white; 
-    padding-bottom: 5px; 
+    padding-bottom: 0px; 
+    padding-top: 20px;
 }
 
  .nav ul {
@@ -110,7 +111,7 @@ body {
     height: 30px;
     width: 100%;
     padding: 0 5px; 
-    font-size: 12px;
+    font-size: 14px;
     border-style: none;
     border-radius: 2px;
     position: relative;    
@@ -132,8 +133,8 @@ body {
 
 .header-search button {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 2px;
+    right: 2px;
     background-color: white;
     border: 0;
     padding: 2px;    
@@ -157,7 +158,6 @@ footer {
 
 .footer-cont-main {
     width: 100%;
-    height: 250px;
     background-color: black;
     display:flex;
     color: white;
@@ -437,14 +437,14 @@ padding-bottom: 10px;
     }
     
     .footer-cont1 {
-        width: 25%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
     
     .footer-cont2 {
-        width: 25%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -456,13 +456,14 @@ padding-bottom: 10px;
         }
     
     .footer-cont3 {
-        width: 25%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
     }
 
     .footer-cont-social {
+        width: 75%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;

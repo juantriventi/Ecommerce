@@ -20,6 +20,13 @@
                     <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
                         <button class="btn btn-danger" type="submit">ELIMINAR</button>
                     </form>
+                    
+                </div>
+
+                <div class="comprar-detalle mt-4" >
+                    <form action="/users/edit/<%= user.id %>" method="POST">
+                        <button class="btn btn-danger" type="submit">EDITAR</button>
+                    </form>
                 </div>
             </article>
            
