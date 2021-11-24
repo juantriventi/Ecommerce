@@ -119,8 +119,9 @@ font-size: 18px;
 
 .imagenZapatilla{
     display: flex;
-    width: 100%;    
+    width: 80%;    
     justify-content: center;
+    margin: 0 auto;
 
 }
 .titulozapatilla{

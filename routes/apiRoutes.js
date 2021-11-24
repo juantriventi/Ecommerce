@@ -5,4 +5,6 @@ const imagesapi = require ("./api/imagesapi")
 
 apiRouter.use("/products", productsapi)
 apiRouter.use("/images" , imagesapi)
+
+
 module.exports = apiRouter;
