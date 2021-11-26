@@ -17,11 +17,11 @@ module.exports = {
       },
       {
         name: 'Nike SB Chron',
-        description: 'zapatillas para hacer spining',
+        description: 'ojotas color rojo',
         state: 'disponible',
         price: 1000,
         stock:100,
-        image:`1631052256021_img.jpg`,
+        image:`1635446785025_img.jpg`,
         brandId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
