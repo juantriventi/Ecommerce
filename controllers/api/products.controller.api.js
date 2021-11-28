@@ -1,9 +1,18 @@
 const Product = require("../../services/products")
 
+const IMAGES_FOLDER = `http://localhost:3030/images/products/`;
+
 const productsApi = {
     
     list: async (req, res) => {
-        const products = await Product.getAll()
+        let products = await Product.getAll()
+        
+        products = products.map(product => {
+            product.image = IMAGES_FOLDER + product.image;
+            return product;    
+        });
+        
+        
         res.status(200)
         res.json({
             data:{products},
@@ -12,26 +21,36 @@ const productsApi = {
     } ,
     detail: async (req, res) => {
         const id = req.params.id
-        const Producto = await Product.getById(id)
-        image = "localhost:3030/images/products/" + producto.image
-        producto.image = image
+        let producto = await Product.getById(id)
+
+        producto.image = IMAGES_FOLDER + producto.image;
         res.status(200)
         res.json ({
-            data:{product: Producto},
+            data:{product: producto},
             message: "ok"
         })
 
     },
     getByName: async (req, res) => {
-        const name = req.body.name
-        const producto = await Product.getByNombre(name)
-        image = "localhost:3030/images/products/" + producto.image
-        producto.image = image  
-        res.status(200)
-        res.json ({
-        data:{product:producto},
-        message: "ok"
-       })
+        let name = req.params.name
+      
+        try{
+            let producto = await Product.search(name)
+        
+            producto.image = IMAGES_FOLDER + producto.image;
+            res.status(200)
+            res.json ({
+            data:{product:producto},
+            message: "ok"
+           });
+
+        } catch(error) {
+            res.status(404)
+            res.json ({
+            message: `ERROR: Producto no encontrado`,
+           });
+        }
+       
     }
 }
 

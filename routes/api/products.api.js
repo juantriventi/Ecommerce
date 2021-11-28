@@ -8,7 +8,7 @@ const {validacionProductoMiddleware, reglasValidacion} = require ("../../middlew
 
 router.get("/", productsApi.list);
 router.get("/:id",productsApi.detail);
-router.post("/name",productsApi.getByName);
+router.get("/name/:name",productsApi.getByName);
 
 
 module.exports = router;

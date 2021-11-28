@@ -1,3 +1,5 @@
 node_modules
 .env
 log.txt
+.vscode/
+.package-lock.json
