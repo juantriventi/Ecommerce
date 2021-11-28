@@ -19,6 +19,7 @@ const Producto = {
         return products
     },
 
+    /* busca un producto por su nombre */
     search: async(query) => {
         const product = await Product.findOne({ where: { name: query } })
         return product;
@@ -33,10 +34,6 @@ const Producto = {
         await Product.create(producto);
     },
 
-    getByNombre: async(nombre) => {
-        const producto = await Product.findOne({where:{name:nombre}})
-        return producto;
-    },
 
     update: async(producto) => {
         const {
