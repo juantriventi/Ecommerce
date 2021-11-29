@@ -55,7 +55,19 @@ const Producto = {
                 }
             });
     },
-    
+
+    getLastProduct: async() => {   
+        let product = null;
+        
+        Product.findAll({
+            order:[["createdAt", "DESC"]]
+        }).then(products => {
+            if(products !== []){
+                product = products[0]
+            }
+        })
+        return product;
+    },
 
     remove: async (producto) => {
       await Product.destroy({where:{id:producto.id}})

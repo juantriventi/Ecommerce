@@ -61,7 +61,7 @@ const productsApi = {
        
     },
 
-    latest: (req, res) =>{
+     latest: (req, res) =>{
 
      Product.findOne({ 
             order: [
@@ -84,7 +84,7 @@ const productsApi = {
         size: product.size.name,
         stock: product.stock,
         image: product.images
-    }
+    } 
 }
 res.json(respuesta);
     })
