@@ -1,4 +1,6 @@
 const bcryptjs = require('bcryptjs');
+const { sequelize } = require('../src/database/models');
+const { QueryTypes } = require('sequelize');
 const db = require('../src/database/models');
 
 const hashPassword = (password) => {
@@ -30,6 +32,12 @@ const User = {
         });
 
         return user;
+    },
+    search: async(query) => {
+        
+        console.log(query);
+
+        //return user
     },
 
 

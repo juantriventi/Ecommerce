@@ -11,6 +11,7 @@ const {
 const usersController = require("../controllers/usersController.js")
 
 
+
 router.get("/login", usersController.login);
 
 router.get("/register", usersController.register);
@@ -24,5 +25,9 @@ router.get("/detail/:id",userIsLoged, usersController.detail);
 router.post("/logout",userIsLoged, usersController.logout);
 
 router.delete("/delete/:id",userIsLoged, usersController.delete);
+
+router.get("/edit/:id", usersController.edit);
+
+router.put("/:id", usersController.put );
 
 module.exports = router;

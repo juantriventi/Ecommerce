@@ -11,11 +11,16 @@ const productsApi = {
             product.image = IMAGES_FOLDER + product.image;
             return product;    
         });
-        
+        const total = products.length;
         
         res.status(200)
         res.json({
-            data:{products},
+            meta:{
+                total
+            },
+            data:{
+                products
+            },
             message: "ok"
         })
     } ,

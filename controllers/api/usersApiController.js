@@ -42,6 +42,61 @@ const usersAPIController = {
             pagination(req, res);
         }
     },
+    search:async (req,res) => {
+        const name = req.params.name
+
+        let user = null;
+        return  User.findOne({
+            where: {
+                firstName: name
+            }
+        })
+        .then(dataUser => {
+            if(dataUser !== null){
+                res.status(200);
+                res.json({
+                    data: {
+                        user: dataUser
+                    },
+                    message: 'ok'
+                })
+            }else{
+                res.status(404);
+                res.json({
+                   
+                    message: 'ERROR: Usuario no encontrado'
+                })
+            }
+        })
+        .catch(err => 
+            {
+                res.status(404);
+                res.json({
+                    message:'ERROR: de sistema en usuarios search'
+                })   
+            }
+            
+            ); 
+                /* 
+        try{
+            console.log(usuario);
+            let usuario = await User.search(name)
+            
+            res.status(200)
+            res.json ({
+            data:{user:usuario},
+            message: "ok"
+           });
+
+        } catch(error) {
+            res.status(404)
+            res.json ({
+            message: `ERROR: Usuario no encontrado`,
+           });
+        }  */
+
+
+    },
     detail: (req, res) =>{
         let userId = req.params.id;
         User.findByPk(userId, 
