@@ -209,7 +209,7 @@ padding-bottom: 10px;
     font-size: 20px;
 }
 
-/* carrito */
+/* carrito
 
 .cart-titulo {
     padding: 50px 0px 10px 50px;
@@ -395,14 +395,12 @@ padding-bottom: 10px;
 }
 .cart-cont-suscribirse {
     display: none;
-}
+} */
 /* list */
-.fondo-list{
-    background-color: #ebebeb;
-}
 
 .titulo-list{
     text-align: center;
+    padding: 15px;
 }
 
 .lista-productos{
@@ -411,13 +409,45 @@ padding-bottom: 10px;
     margin-top:20px;
     margin-left: 5px;
     margin-right: 5px;
-    border: black solid 1px;
-    border-radius: 5px;
     font-size: 25px;
-    
+    border: 1px solid #d4d1d1;
+    padding: 15px;
+    margin: 15px;   
     
 }
 
+.lista-productos img {
+    width: 80%;
+    height: auto;
+}
+.lista-productos a {
+    font-size: 20px;
+}
+.lista-productos p {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+ .marcas-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.marcas-cont-chico {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;   
+}
+
+.marcas-cont-chico img {
+    width: 75%;    
+    background-color: white;
+    padding: 30px;
+} 
 
 /* tablet */
 @media (min-width: 481px) {
@@ -435,8 +465,6 @@ padding-bottom: 10px;
         align-items: flex-end;
     }
     
-
-
 .logo{
     width: 50%;
     display: block;
@@ -495,81 +523,7 @@ padding-bottom: 10px;
         justify-content: space-evenly;
     }
 }
-    /* carrito */
-
-    .cart-cont-main {
-        display: flex;
-        padding: 40px;
-    }
-
-    .cart-cont-productos img{
-        width: 30%;
-        display: flex;
-    }
-
-    .cart-cont-derecha {
-        width: 50%;
-    }
-    .cart-producto1, .cart-producto2 {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .cart-detalle-producto1, .cart-detalle-producto2 {
-        position: relative;
-        padding: 15px 15px 0px;
-        width: 70%;
-    }
-
-    .cart-cont-pagos {
-        display: flex;
-        width: 80%;
-        flex-direction: column;
-        padding: 20px 50px 25px;
-    }
-
-    .cart-cont-pagos img {
-        width: 50%;
-    }
-
-    .cart-cont-suscribirse {
-        display: block;
-        width: 70%;
-        padding: 50px;
-        border: 1px solid #d4d1d1;
-        margin-left: 15%;
-        margin-bottom: 30px;
-        margin-top: 30px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 700;
-    }
     
-    .cart-nl-field input{
-        border-style: none;
-        border: 1px solid black;
-        width: 40%;
-    }
-    
-    .cart-cont-suscribirse input::placeholder {
-        font-size: 14px;
-        padding-left: 5px;
-      }
-    
-    .cart-cont-suscribirse button {
-        background-color: black;
-        border-style: none;
-        color: white;
-        height: 30px;
-        width: 20%;
-    }
-    
-    .cart-nl-field {
-        display: flex;
-        justify-content: center;
-        padding-top: 10px;
-    }
-
 
 /* detalle de producto */
 
@@ -611,7 +565,9 @@ font-weight: bold;
 }
 
   
-  @media (max-width:768px) {
+@media (max-width:769px) {
+
+
     .nombre-detalle{
         display: none;
     }
@@ -702,7 +658,28 @@ button.entrar:hover {
     }
 }
 
+@media (min-width: 769px)  {
 
+.marcas-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.marcas-cont-chico {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;   
+}
+
+.marcas-cont-chico img {
+    width: 25%;    
+    background-color: white;
+    padding: 30px;
+
+}
+}
 /*desktop*/
 @media (min-width: 1280px) {
 

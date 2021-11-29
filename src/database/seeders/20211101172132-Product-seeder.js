@@ -6,7 +6,7 @@ module.exports = {
      await queryInterface.bulkInsert('Products', [
        {
         name: 'Nike pegasus 35',
-        description: 'zapatillas para volar',
+        description: 'Zapatillas para volar',
         state: 'disponible',
         price: 1000,
         stock:100,
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         name: 'Nike SB Chron',
-        description: 'ojotas color rojo',
+        description: 'Ojotas color rojo',
         state: 'disponible',
         price: 1000,
         stock:100,
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         name: 'Nike SB',
-        description: 'zapatillas de skate',
+        description: 'Zapatillas de skate',
         state: 'disponible',
         price: 1990,
         stock:100,
@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         name: 'Nike Air max',
-        description: 'zapatillas deportivas',
+        description: 'Zapatillas deportivas',
         state: 'disponible',
         price: 1500,
         stock:100,
@@ -47,7 +47,19 @@ module.exports = {
         brandId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        name: 'Nike Superfly 8 Academy Fg',
+        description: 'Los Nike Mercurial Superfly 8 Academy MG proporcionan una gran velocidad y una tracción especializada para realizar recortes rápidos y frenadas bruscas.La textura adherente de la parte superior ofrece un control preciso del balón, y la zona del tobillo elástica se adapta al tobillo para crear un ajuste perfecto que se adapta a tus movimientos.',
+        state: 'disponible',
+        price: 15000,
+        stock:100,
+        image:`botin-home.jpg`,
+        brandId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
+    
     ], {});
     
   },

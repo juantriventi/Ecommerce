@@ -2,6 +2,10 @@ body {
     font-family: 'Lato', sans-serif!important;
 }
 
+.imagenprincipal2 {
+    width: 100%;
+}
+
 .hero{
     display: flex;
     justify-content: center;
@@ -35,8 +39,8 @@ body {
 }
 
 .hero-title{
-  
-font-size: 44px;
+padding: 30px 20px;  
+font-size: 35px;
 font-style: normal;
 font-weight: 700;
 text-align: left;
@@ -104,11 +108,10 @@ font-size: 18px;
     width: 100%;
 }
 .ropa-display{
-    
-    
+    padding-bottom: 30px;    
     width: 100%;    
-    
 }
+
 .ropafila{
     display: flex;
     width: 100%;
@@ -138,6 +141,11 @@ font-size: 18px;
     font-weight: normal;
     font-size: 24px;
     margin-top: 12px;
+}
+
+.cart-boton-chico button a {
+    color: white;
+    text-decoration: none;
 }
 
 /* tablet */

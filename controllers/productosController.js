@@ -34,6 +34,11 @@ const controlador = {
   carrito: (req, res) => {
     res.render("products/carrito");
   },
+
+  marcas: (req, res) => {
+    res.render("products/marcas");
+  },
+
   create: async(req, res) => {
     res.render("products/create", {
       colores: colores,

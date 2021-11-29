@@ -3,10 +3,10 @@
     <%- include("../partials/head") %> 
 <body>
     <%- include("../partials/header") %> 
-    <main>
+    <main class="contenedor-detalle-producto">
         <div class="producto-detalle">
-            <img src= <%= "/images/products/" + encodeURI(producto.image)%> >
-            <div class="texto-bajo-foto-detalle"><p>foto <%= producto.name %> </p></div>
+            <img class="foto-producto"src= <%= "/images/products/" + encodeURI(producto.image)%> >
+            <div class="texto-bajo-foto-detalle"><p>Foto <%= producto.name %> </p></div>
         </div>
         <div class="descripcion-producto">
             
@@ -14,8 +14,8 @@
             <div class="descripcion-detalle"><p><%= producto.description %> </p></div>
             <div class="precio-detalle">$<%= producto.price %> </div>
             
-            <div class="cuotas-detalle">6 cuotas sin interes de $2.075</div>
-            <div class="envio-completar"><h4>Envio gratis </h4></div>
+            <div class="cuotas-detalle">6 cuotas sin interés de $2.075</div>
+            <div class="envio-completar"><h4>Envío gratis </h4></div>
             <div class="mas-vendido-detalle color-"></div>
             
             

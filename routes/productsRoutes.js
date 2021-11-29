@@ -32,6 +32,8 @@ router.post("/buscar", productosController.search);
 
 router.get("/carrito", productosController.carrito);
 
+router.get("/marcas", productosController.marcas);
+
 router.get("/detalle/:id", productosController.detalle);
 
 router.get("/create", productosController.create); // miestra la vista para crear

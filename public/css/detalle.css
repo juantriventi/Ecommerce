@@ -5,19 +5,26 @@ body{
     background-color: #ebebeb;
 }
 
-img{
-    width: 50%;
-    
+.contenedor-detalle-producto {
+    border: 1px solid #d4d1d1;
+    margin: 20px;
+    height: auto;
+    padding: 20px;
+    }
+
+.foto-producto{
+    width: 100%;
+    padding: 20px;
 }
 .producto-detalle{
     left: 20vw;
     top: 20vh;
-    position: relative;
-   
+    position: relative;   
     height: 40vh;
     width: 30vw;
     text-align: center;
     background-color: #fff;
+    
     
     
 }
@@ -28,28 +35,45 @@ img{
     background-color: #fff;
     height: 40vh;
     width: 30vw;
-    text-align: center;   
+    text-align: left; 
    
 }
 
-a{
+.button-crear-prod{
     text-decoration:none;
     color: black;
-    
+    background-color: black;
+    border-style: none;    
+    height: 35px;
+    width: 25%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;   
+    margin: 20px; 
 }
+.button-crear-prod a {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
 
 
 .precio-detalle{
 font-size: 18px;
 font-weight: bold;
+text-align: left;
 }
 .cuotas-detalle{
     padding-top: 5px;
     color: lightslategrey;
+    text-align: left;
 }
 .nombre-detalle{
     padding-top: 5px;
     background-color: #fff;
+    font-size: 30px;
+    text-align: left;
 }
 .precio-detalle{
     padding-top: 5px;
@@ -103,5 +127,7 @@ font-weight: bold;
     .envio-detalle{
         font-size: 14px;
     }
-
+    .foto-producto{
+        width: 100%;        
+    }
 }
