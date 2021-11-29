@@ -6,22 +6,22 @@ module.exports = {
      await queryInterface.bulkInsert('Products', [
        {
         name: 'Nike pegasus 35',
-        description: 'Zapatillas para volar',
+        description: 'Con el Nike pegasus 35, la búsqueda de la velocidad continúa.Sal a la calle con elevaciones de espuma más altas y la comodidad amortiguada combinadas con una parte superior ligera que ofrece sujeción segura.Los detalles intuitivos lo convierten en un básico para los corredores habituales.',
         state: 'disponible',
         price: 1000,
         stock:100,
-        image:`1635446758971_img.jpg`,
+        image:`Nike Quest.jpg`,
         brandId:1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Nike SB Chron',
-        description: 'Ojotas color rojo',
+        description: 'Con el Nike Quest, la búsqueda de la velocidad continúa.Sal a la calle con elevaciones de espuma más altas y la comodidad amortiguada combinadas con una parte superior ligera que ofrece sujeción segura.Los detalles intuitivos lo convierten en un básico para los corredores habituales.',
         state: 'disponible',
         price: 1000,
         stock:100,
-        image:`1635446785025_img.jpg`,
+        image:`Nike evolution.jpg`,
         brandId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
