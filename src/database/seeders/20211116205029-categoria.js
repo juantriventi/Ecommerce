@@ -18,6 +18,14 @@ module.exports = {
           createdAt: new Date(), 
           updatedAt: new Date(), 
         },
+
+        {
+          categoria: "Niños", 
+          createdAt: new Date(), 
+          updatedAt: new Date(), 
+        },
+
+        
        
       ],
       {}

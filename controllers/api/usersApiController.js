@@ -46,7 +46,7 @@ const usersAPIController = {
         let userId = req.params.id;
         User.findByPk(userId, 
             {
-            //     include : ['rol']
+            
             attributes:['firstName', 'lastName', 'userName', 'email', 'userName', 'street', 'number', 'floor', 'apartment', 'city', 'state', 'cp', 'phone_number']
             })
             .then(user => {

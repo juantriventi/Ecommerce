@@ -5,6 +5,7 @@ const usersRoutes = require("./routes/usersRoutes.js");
 const logMiddleware = require("./middlewares/logMiddleware");
 const productsApiRouter = require("./routes/api/products.api");
 const apiUserRouter = require("./routes/api/usersApi");
+const apiCategoriasRouter = require("./routes/api/categoriasApi")
 const cors = require("cors");
 const apiRouter = require ("./routes/apiRoutes");
 const createErrors = require('http-errors');
@@ -41,6 +42,7 @@ app.use("/users", usersRoutes);
 app.use("/api", apiRouter);
 app.use("/api/products", productsApiRouter)
 app.use('/api/users', apiUserRouter);
+app.use('/api/categorias', apiCategoriasRouter);
 app.use('/', (req, res) => res.json({ clave: "con el server" })); 
 app.listen(port, () => 
 console.log("Levantando un servidor con Express en el puerto" + port)
