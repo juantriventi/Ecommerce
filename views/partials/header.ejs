@@ -6,7 +6,7 @@
                     <li><a href="/users/register">Creá tu cuenta  |</a></li>
                     <li><a href="/users/login">Ingresá</a><i class="fas fa-sign-in-alt"></i></li>  
                 <%}else{%>
-                    <li style="margin-top: 4px; margin-right: 8px;"><a href="users/detail/<%=auth.user.id%>"><%=auth.user.userName%></a></li>
+                    <li style="margin-top: 4px; margin-right: 8px;"><a href="/users/detail/<%=auth.user.id%>"><%=auth.user.userName%></a></li>
                     <li >
                         <form action="/users/logout" method="post">
                             <button class="btn btn-sm btn-danger" type="submit">Logout</button>
@@ -27,7 +27,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/products">Productos</a></li>
                         <!-- <li><a href="/products/create">Crear Producto</a></li> -->
-                        <li><a href="products/marcas">Marcas</a></li>
+                        <li><a href="/products/marcas">Marcas</a></li>
                     </ul>
                 </div>
                 <div class="header-right-cont">

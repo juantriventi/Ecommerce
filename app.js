@@ -43,6 +43,8 @@ app.use("/api", apiRouter);
 app.use("/api/products", productsApiRouter)
 app.use('/api/users', apiUserRouter);
 app.use('/api/categorias', apiCategoriasRouter);
+
+
 app.use('/', (req, res) => res.json({ clave: "con el server" })); 
 app.listen(port, () => 
 console.log("Levantando un servidor con Express en el puerto" + port)

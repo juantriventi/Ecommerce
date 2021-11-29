@@ -14,8 +14,12 @@
                 <p>Provincia: <%= user.state %></p>
                 <p>Codigo postal: <%= user.cp %></p>
                 <p>Numero de telefono: <%= user.phone_number %></p>
-        
-        
+               <!--  
+                <div class="comprar-detalle mt-4" >
+                    <a class="btn btn-warning" href="/users/edit/<%= user.id %>" >
+                        EDITAR
+                    </a>
+                </div> -->
                 <div class="comprar-detalle mt-4" >
                     <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
                         <button class="btn btn-danger" type="submit">ELIMINAR</button>
@@ -23,11 +27,7 @@
                     
                 </div>
 
-                <div class="comprar-detalle mt-4" >
-                    <form action="/users/edit/<%= user.id %>" method="POST">
-                        <button class="btn btn-danger" type="submit">EDITAR</button>
-                    </form>
-                </div>
+                
             </article>
            
         </section>
