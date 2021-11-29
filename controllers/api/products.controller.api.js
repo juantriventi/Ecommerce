@@ -1,4 +1,7 @@
 const Product = require("../../services/products")
+let db = require("../../src/database/models")
+const sequelize = db.sequelize
+const path = require("path")
 
 const IMAGES_FOLDER = `http://localhost:3030/images/products/`;
 
@@ -56,7 +59,41 @@ const productsApi = {
            });
         }
        
+    },
+
+    latest: (req, res) =>{
+
+     Product.findOne({ 
+            order: [
+                ['id', 'DESC']
+            ]
+        })
+    .then( product => JSON.parse(JSON.stringify(product)))
+    .then( product => {
+        let respuesta = {
+            meta: {
+                status: 200,
+                url: '/api/products/latest'
+            },
+        data: {
+        id: product.id,       
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        color: product.color.name,
+        size: product.size.name,
+        stock: product.stock,
+        image: product.images
     }
+}
+res.json(respuesta);
+    })
+    
+    .catch( err => {
+        res.send({ err: 'Not found' });
+    })
+    
+}
 }
 
 

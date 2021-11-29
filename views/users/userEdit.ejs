@@ -4,23 +4,24 @@
     <body>
         <%- include("../partials/header") %>
 
-        <h2>Hola <%= users.firstName %></h2>
+        
    
         <div class="registro">
             <form class="form-container" action="/users/<%= users.id %>?_method=PUT" method="POST">
+                <h2>Hola <%= users.firstName %></h2>
                 <h3 class="titulo-login">EDITÁ TU CUENTA:</h3>
 
-                <div class="form-item-container"></div>
+                <div class="form-item-container">
                 <label for="firstName">Nombre:</label> <br>
                 <input type="text" name="firstName" id="firstName" class="formulario-input <%= locals.errors && errors.firstName ? 'is-invalid' : null %>" value="<%= users.firstName %>" required> <br>
                 </div>
                 
-                <div class="form-item-container"></div>
+                <div class="form-item-container">
                 <label for="lastName">Apellido:</label> <br>
                 <input type="text" id="lastName" name="lastName"  class="formulario-input <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" value="<%=users.lastName%>" required> <br>
                 </div>
                 
-                <div class="form-item-container"></div>
+                <div class="form-item-container">
                 <label for="email">Email:</label> <br>
                 <input type="email" id="email" name="email" class="formulario-input <%= locals.errors && errors.email ? 'is-invalid' : null %>"  value="<%=users.email%>" required disabled>
                 </div><br>
@@ -32,6 +33,7 @@
                     <div id="street_error" class="error is-invalid texto-error">
                         <%= locals && locals.errors && locals.errors.street &&  locals.errors.street.msg %>
                     </div>
+                </div>
                 
 
                 <div class="form-item-container">
@@ -87,12 +89,14 @@
 
                 <div class="form-item-container">
                 <label for="password">Contraseña:</label><br>
-                <input type="password" id="password" name="password" class="formulario-input <%= locals.errors && errors.password ? 'is-invalid' : null %>"  >
-                
-                <div class="form-item-container"></div>
+                <input type="password" id="password" name="password" class="formulario-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" disabled >
+                </div>
+
+                <div class="form-item-container">
                 <label for="confirmPassword">Repita la contraseña:</label><br>
-                <input type="password" id="confirmPassword" name="confirmPassword"  class="formulario-input"> 
-                
+                <input type="password" id="confirmPassword" name="confirmPassword"  class="formulario-input" disabled> 
+                </div>
+
                 <div class="botones">
                 <button class="btn btn-primary" type="submit">ACTUALIZAR</button>
                 </div>
